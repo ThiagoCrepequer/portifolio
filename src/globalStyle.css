@@ -1,4 +1,8 @@
-html, body, #root {
+body, #root {
+    position: absolute;
+    box-sizing: border-box;
     width: 100%;
-    color: rgb(red, green, blue);
+    margin: 0;
+    padding: 0;
+    background-color: rgb(27, 25, 36);
 }
