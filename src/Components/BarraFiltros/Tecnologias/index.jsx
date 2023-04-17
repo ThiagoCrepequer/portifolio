@@ -8,7 +8,7 @@ export default function Tecnologias({ tecnologias }) {
             <ul>
                 {tecnologias.map(stack => (
                     <li key={stack}>
-                        <CheckBox>
+                        <CheckBox tipo={"tecnologias"}>
                             <img src={`/assets/icons/${stack}.svg`} alt='icone' width={20} />
                             {stack.slice(0, 1).toUpperCase() + stack.slice(1)}
                         </CheckBox>

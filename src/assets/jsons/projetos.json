@@ -1,6 +1,6 @@
 [
     {
-        "title": "Conecte-se",
+        "title": "Conecte-sssse",
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [
@@ -23,7 +23,19 @@
         ]
     },
     {
-        "title": "Conecte-se",
+        "title": "Conecte-sse",
+        "image": "",
+        "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
+        "tecnologias": [
+            "html",
+            "css",
+            "javascript",
+            "nodejs",
+            "react"
+        ]
+    },
+    {
+        "title": "Conecte-ssse",
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [

@@ -2,6 +2,8 @@
     min-width: 350px;
     max-width: 25vw;
     
+    display: inline-block;
+    
     height: 250px;
 
     box-shadow: 3px 3px 5px -4px rgba(0, 0, 0, 0.9);
@@ -24,6 +26,7 @@
     }
 
     &__icone {
+        width: 30px;
         margin: 0;
     }
 }
