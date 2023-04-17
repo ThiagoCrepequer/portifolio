@@ -1,0 +1,27 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 140px;
+
+    p {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .skill {
+        width: 60px;
+        height: 55px;
+
+        img {
+            width: 35px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}

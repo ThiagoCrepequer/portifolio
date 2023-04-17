@@ -1,0 +1,17 @@
+@import '/src/variables';
+
+.titulo {
+    position: relative;
+    margin: 0;
+    color: whitesmoke;
+}
+
+.titulo::after {
+    content: "";
+    height: 10px;
+    width: 80px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    border-bottom: 3px solid $cor-principal;
+}

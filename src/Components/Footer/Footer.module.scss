@@ -1,0 +1,37 @@
+@import '/src/variables';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+
+    background-color: $cor-de-fundo;
+
+    &__sociais {
+        margin-top: 20px;
+
+        svg {
+            margin: 10px;
+        }
+    }
+
+    &__paginas {
+        display: flex;
+        flex-direction: row;
+
+        p {
+            margin: 10px;
+
+            a {
+                color: whitesmoke;
+            }
+        }
+    }
+
+    hr {
+        width: 99%;
+        opacity: 20%;
+    }
+}

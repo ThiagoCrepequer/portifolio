@@ -1,0 +1,42 @@
+@import '/src/variables';
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  
+
+.infos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 30px;
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+    }
+    
+    &__icone {
+        background-color: $cor-principal;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p { 
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-style: normal;    
+        
+        a {
+            color: whitesmoke;
+        }
+    }
+}
+

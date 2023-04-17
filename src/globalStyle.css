@@ -1,8 +1,13 @@
-body, #root {
-    position: absolute;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+html, body, #root {
+    position: relative;
     box-sizing: border-box;
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(27, 25, 36);
+    background-color: rgb(13, 17, 39);
+    font-family: 'Roboto', sans-serif;
 }

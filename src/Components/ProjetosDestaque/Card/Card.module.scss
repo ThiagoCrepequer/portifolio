@@ -1,0 +1,30 @@
+@import '/src/variables';
+
+.card {
+    border: 1px solid $cor-principal;
+
+    width: 40vw;
+    height: 220px;
+    margin: 10px;
+    padding: 5px; 
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    &__imagem {
+        margin: 10px;
+        
+        img {
+            width: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+   .card {
+        width: 100%;
+   }
+}
+
+
