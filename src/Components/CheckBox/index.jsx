@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function CheckBox({children, onClick, tipo}) {
+export default function CheckBox({label, onClick, tipo, children}) {
     return (
-        <>
-            <input type='checkbox' onClick={onClick} title={children} tipo={tipo}/>
-            <label>{children}</label>
-        </>
+        <label>
+            <input type='checkbox' onClick={onClick} title={label} placeholder={tipo}/>
+            {children}
+            {label}
+        </label>
     )
 }

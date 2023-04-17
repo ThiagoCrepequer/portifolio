@@ -1,9 +1,8 @@
 import React from 'react'
 import CardProjeto from '../CardProjeto'
-import dados from '../../assets/jsons/projetos.json'
 import styles from './TodosProjetos.module.scss'
 
-export default function TodosProjetos() {
+export default function TodosProjetos({dados}) {
   return (
     <div className={styles.container}>
         {dados.map(dado => (

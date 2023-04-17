@@ -1,13 +1,14 @@
 import React from 'react'
 import CheckBox from '../../CheckBox'
 
-export default function Stacks({onClick}) {
+export default function Stacks({ onClick, stacks }) {
     return (
         <li>
             <h3>Stacks</h3>
             <ul>
-                <li><CheckBox onClick={onClick} tipo={"stacks"}>Front-End</CheckBox></li>
-                <li><CheckBox onClick={onClick} tipo={"stacks"}>Back-End</CheckBox></li>
+                {stacks.map(stack => (
+                    <li><CheckBox onClick={onClick} tipo={"stacks"} label={stack.slice(0, 1).toUpperCase() + stack.slice(1)} /></li>
+                ))}
             </ul>
         </li>
     )
