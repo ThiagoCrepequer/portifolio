@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Card.module.scss'
+import Icon from 'Components/Icon'
 
 export default function Card({dados}) {
     return (
@@ -12,7 +13,7 @@ export default function Card({dados}) {
                 <h2>{dados.title}</h2>
                 <p>{dados.description}</p>
                 {dados.tecnologias.map(icone => {
-                    return <img src={`/assets/icons/${icone}.svg`} width={40} alt={icone} key={icone}/>
+                    return <Icon nome={icone} size={40} key={icone}/>
                 })}
             </div>
         </div>

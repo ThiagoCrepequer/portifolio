@@ -7,14 +7,14 @@
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.80) 25%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.70) 100%), 
-                url('../../../assets/imgs/background.jpg');
-    background-size: cover;
-    background-position: center center;
-
-    height: 100%;
+    overflow: hidden;
 
     color: whitesmoke;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.80) 25%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.70) 100%),
+        url('../../../assets/imgs/background.jpg');
+    background-size: cover;
+    background-position: center center;
 
     h1 {
         position: relative;
@@ -84,15 +84,17 @@
 
     @keyframes blink {
         0% {
-          opacity: 1;
+            opacity: 1;
         }
+
         99% {
-          opacity: 0;
+            opacity: 0;
         }
+
         100% {
-          opacity: 1;
+            opacity: 1;
         }
-      }
+    }
 
     @media screen and (max-width: 900px) {
         h1 {

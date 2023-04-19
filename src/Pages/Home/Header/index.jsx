@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Header.module.scss'
+import { getHeight } from 'assets/js/getHeight';
 
 export default function Header() {
     const [text, setText] = useState("");
+    const [height] = useState(getHeight() + 1);
 
     function digitacao() {
         const element = document.querySelector("p[data-text]");
@@ -29,7 +31,12 @@ export default function Header() {
     }, []);
 
     return (
-        <div className={styles.header}>
+        <div 
+            className={styles.header} 
+            style={{
+                height: height
+            }}
+        >
             <h1 id='titulo-texto' data-text="THIAGO CREPEQUER">THIAGO CREPEQUER</h1>
             <p data-text="Engenheiro de Software especialista em desenvolvimento web Full-Stack">{text}</p>
         </div>
