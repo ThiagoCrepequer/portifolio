@@ -11,9 +11,9 @@ export default function Footer() {
         <hr/>
 
         <div className={styles.footer__sociais}>
-            <a href="https://www.instagram.com/t.crepequer/"><RiInstagramLine  size={25} color='white'/></a>
-            <a href="https://www.linkedin.com/in/thiago-crepequer/"><BsLinkedin size={25} color='white'/></a>
-            <a href="https://github.com/ThiagoCrepequer"><BsGithub size={25} color='white' /></a>
+            <a href="https://www.instagram.com/t.crepequer/" target='_blank' rel='noreferrer'><RiInstagramLine  size={25} color='white'/></a>
+            <a href="https://www.linkedin.com/in/thiago-crepequer/" target='_blank' rel='noreferrer'><BsLinkedin size={25} color='white'/></a>
+            <a href="https://github.com/ThiagoCrepequer" target='_blank' rel='noreferrer'><BsGithub size={25} color='white' /></a>
         </div>
         
         <div className={styles.footer__paginas}>

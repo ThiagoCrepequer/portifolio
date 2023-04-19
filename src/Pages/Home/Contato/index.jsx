@@ -5,7 +5,7 @@ import { BsInstagram, BsLinkedin } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
 import SubTitulo from 'Components/SubTitulo'
 import Section from 'Components/Section'
-import Bloco, { Icone } from './Bloco'
+import BlocoContato, { Icone } from '../../../Components/BlocoContato'
 
 export default function Contato() {
     return (
@@ -15,32 +15,32 @@ export default function Contato() {
                 <SubTitulo>Let's talk</SubTitulo>
                 <address className={styles.infos}>
 
-                    <Bloco>
+                    <BlocoContato>
                         <Icone>
                             <BsInstagram size={25} />
                         </Icone>
 
-                        <a href='https://www.instagram.com/t.crepequer/' target='_blank'>t.crepequer</a>
+                        <a href='https://www.instagram.com/t.crepequer/' target='_blank' rel='noreferrer'>t.crepequer</a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-                    </Bloco>
+                    </BlocoContato>
 
-                    <Bloco>
+                    <BlocoContato>
                         <Icone>
                             <BsLinkedin size={25} />
                         </Icone>
 
-                        <a href='https://www.linkedin.com/in/thiago-crepequer/'>thiago-crepequer</a>
+                        <a href='https://www.linkedin.com/in/thiago-crepequer/' target='_blank' rel='noreferrer'>thiago-crepequer</a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-                    </Bloco>
+                    </BlocoContato>
 
-                    <Bloco>
+                    <BlocoContato>
                         <Icone>
                             <MdEmail size={25} />
                         </Icone>
 
-                        <a href='email:thiago.crepequer@hotmail.com'>thiago@crepequer.tk</a>
+                        <a href='email:thiago.crepequer@hotmail.com' target='_blank' rel='noreferrer'>thiago@crepequer.tk</a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-                    </Bloco>
+                    </BlocoContato>
                 </address>
             </div>
 
