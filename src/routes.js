@@ -3,6 +3,7 @@ import Home from "Pages/Home";
 import Layout from "Pages/Layout";
 import Projetos from "Pages/Projetos";
 import NotFound from "Pages/NotFound";
+import Contatos from "Pages/Contatos";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/projetos",
         element: <Projetos />
+      },
+      {
+        path: "/contatos",
+        element: <Contatos />
       }
     ]
   },

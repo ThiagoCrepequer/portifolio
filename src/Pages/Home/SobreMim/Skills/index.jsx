@@ -12,7 +12,7 @@ export default function Skills() {
             <SubTitulo>Skills</SubTitulo>
             <div className={styles.skills__container}>
                 {skills.map(skill => (
-                    <div className={styles.skill}>
+                    <div className={styles.skill} key={skill}>
                         <Icon nome={skill} size={40} />
                         <p>{skill}</p>
                     </div>

@@ -12,7 +12,7 @@ export default function Menu() {
         <nav className={styles.menu} >
             <ul>
                 <li><NavLink to="/" className={addBordaPaginaAtual}>Home</NavLink></li>
-                <li><NavLink to="/contato" className={addBordaPaginaAtual}>Contato</NavLink></li>
+                <li><NavLink to="/contatos" className={addBordaPaginaAtual}>Contato</NavLink></li>
                 <li><NavLink to="/about" className={addBordaPaginaAtual}>Sobre mim</NavLink></li>
                 <li><NavLink to="/projetos" className={addBordaPaginaAtual}>Projetos</NavLink></li>
             </ul>
