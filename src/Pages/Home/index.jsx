@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from '../../Components/Header'
-import SobreMim from '../../Components/SobreMim'
+import Header from './Header'
+import SobreMim from './SobreMim'
 import styles from './Home.module.scss'
-import Contato from '../../Components/Contato'
-import ProjetosDestaque from '../../Components/ProjetosDestaque'
+import Contato from './Contato'
+import ProjetosDestaque from './ProjetosDestaque'
 
 export default function Home() {
     return (

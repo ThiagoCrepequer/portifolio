@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styles from './Projetos.module.scss';
 import Titulo from '../../Components/Titulo';
-import BarraFiltros from '../../Components/BarraFiltros';
-import TodosProjetos from '../../Components/TodosProjetos';
+import BarraFiltros from './BarraFiltros';
+import TodosProjetos from './TodosProjetos';
 import dados from '../../assets/jsons/projetos.json'
 
 export default function Projetos() {

@@ -4,11 +4,11 @@
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [
-            "HTML",
-            "Javascript"
+            "html",
+            "javascript"
         ],
         "stacks": [
-            "Front-End"
+            "front-end"
         ]
     },
     {
@@ -16,13 +16,13 @@
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [
-            "HTML",
-            "Javascript",
-            "Nodejs",
-            "React"
+            "html",
+            "javascript",
+            "nodejs",
+            "react"
         ],
         "stacks": [
-            "Front-End"
+            "front-end"
         ]
     },
     {
@@ -30,14 +30,14 @@
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [
-            "HTML",
-            "CSS",
-            "Javascript",
-            "Nodejs",
-            "Java"
+            "html",
+            "css",
+            "javascript",
+            "nodejs",
+            "java"
         ],
         "stacks": [
-            "Back-End"
+            "back-end"
         ]
     },
     {
@@ -45,14 +45,14 @@
         "image": "",
         "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
         "tecnologias": [
-            "CSS",
-            "Javascript",
-            "Nodejs",
-            "React"
+            "css",
+            "javascript",
+            "nodejs",
+            "react"
         ],
         "stacks": [
-            "Front-End",
-            "Back-End"
+            "front-end",
+            "back-end"
         ]
     }
 ]

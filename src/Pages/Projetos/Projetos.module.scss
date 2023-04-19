@@ -23,3 +23,20 @@
     }
 
 }
+
+@media screen and (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+
+        aside {
+            flex: 1;
+        }
+        
+        div {
+            flex: 1;
+            flex-grow: 1;
+            margin: 0;
+        }
+    }
+}

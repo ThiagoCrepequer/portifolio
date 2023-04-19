@@ -1,7 +1,7 @@
 import React from 'react'
-import Menu from '../../Components/Menu'
+import Menu from './Menu'
 import { Outlet } from 'react-router-dom'
-import Footer from '../../Components/Footer'
+import Footer from './Footer'
 
 export default function Layout() {
     return (
