@@ -1,78 +1,32 @@
-# GitHub Codespaces ♥️ React
+# Descrição
+Este projeto foi criado como meu portfólio pessoal, com o objetivo de apresentar meus projetos e habilidades da melhor forma possível. Para sua construção, utilizei principalmente a tecnologia React, além de outras ferramentas como Sass, React-Icons e Framer Motion.
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+# Contribuição
+Contribuições são sempre bem-vindas, não apenas na forma de códigos, mas também de ideias novas. Sinta-se à vontade para enviar sugestões de alterações ou fazer suas próprias alterações manualmente após clonar o repositório.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+## Como contribuir
+<ul>
+  <li>Caso tenha alguma ideia, crie uma <a href="https://github.com/ThiagoCrepequer/Portifolio/issues">issue</a> e explique de forma clara o que gostaria que fosse mudado.</li>
+  <li>Para o caso de querer contribuir com o código ou arquivo de mudança, basta clonar o repositório e fazer um <a href="https://github.com/ThiagoCrepequer/Portifolio/pulls">pull request</a> com suas alterações e uma explicação detalha.</li>  
+</ul>
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+## Contato
+Caso tenha alguma dúvida sobre as contribuições entre em contato pelo meu email crepequer@thiago.tk ou me envie uma mensagem em aguma das minhas redes sociais.
+<div>
+  <a href="https://www.instagram.com/t.crepequer/"><img src="https://user-images.githubusercontent.com/45575737/233719206-83447ceb-afd5-4f52-8fd2-dd218a1aa2a5.svg" width="40"/></a>
+  <a href="https://www.linkedin.com/in/thiago-crepequer/"><img src="https://user-images.githubusercontent.com/45575737/233719283-f2fdc018-4a1f-42dc-966c-2d81da935de6.svg" width="40"/></a>
+</div>
 
-This project was bootstrapped for you with [Create React App](https://github.com/facebook/create-react-app).
+# Instalação
+<ul>
+<li>Clone este repositório usando o comando <code>git clone https://github.com/ThiagoCrepequer/portifolio/</code></li>
+  <li>Navegue até a pasta do projeto com <code>cd portifolio</code></li>
+  <li>Instale as dependências do projeto com <code>npm install</code></li>
+  <li>Inicie a aplicação com npm run dev</li>
+  <li>E quando terminar de fazer as alterações basta digitar npm run build e npm start para iniciar o servidor</li>
+</ul>
 
-## Available Scripts
+# Liçenca
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-In the project directory, you can run:
-
-### `npm start`
-
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
-
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center" style="text-align:center;">Made by: Thiago Crepequer</p>
