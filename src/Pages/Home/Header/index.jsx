@@ -31,7 +31,7 @@ export default function Header() {
     }, []);
 
     return (
-        <div 
+        <div
             className={styles.header} 
             style={{
                 height: height

@@ -1,0 +1,51 @@
+[
+    {
+        "titulo": "O inicio",
+        "introducao": "Quando penso no passado, sinto uma nostalgia imensa. Desde jovem, sempre tive paixão pela tecnologia. Desmontar equipamentos velhos e quebrados era um passatempo para mim. Com o tempo, me aproximei do mundo dos jogos e conheci o Minecraft. Descobri que poderia criar meus próprios plugins para o jogo, mas isso exigia que eu aprendesse a programar em Java. Aceitei o desafio e, embora o processo tenha sido difícil, a sensação de ver meu programa funcionando foi indescritível. A partir daí, soube que a programação era meu verdadeiro chamado.",
+        "ano": "2018",
+        "imgs": [
+            {
+                "alt": "print do meu primeiro repositório do github",
+                "url": "/assets/imgs/sobremim/inicio01.png"
+            }
+        ],
+        "desenvolvimentos": [
+            "Há cinco anos, eu compilei meu primeiro código em Java. Na época, eu estava aprendendo através de tutoriais e soluções de fóruns gringos. A sorte foi que o hype do Minecraft trouxe consigo muitos desenvolvedores, o que criou uma comunidade ativa de devs criando plugins. Essa foi minha primeira experiência em uma comunidade, mas infelizmente, não foi muito boa.",
+            "Foi nessa época que eu tive meu primeiro contato com o GitHub. Tentei colocar meu código lá vendo alguns tutoriais e pensei ter sucesso, mas, olhando hoje, percebo que o formato ficou em .txt, haha.",
+            "Minha curiosidade em entender como as coisas funcionavam sempre esteve presente. Mas isso gerava um certo desconforto nas pessoas que eu pedia ajuda. Eu não conseguia aceitar que uma linha de código deveria ser escrita de uma determinada maneira 'apenas porque sim'. Eu queria entender o porquê das coisas, mesmo que não conseguisse compreender completamente.",
+            "Cinco anos depois, eu valorizo muito a cultura de perguntar sem restrições. Acredito que foi graças a essa curiosidade inata que desenvolvi uma facilidade em entender a lógica de programação. Vejo hoje como minha forma de pensar foi moldada nesse momento da minha vida e como isso facilita o meu entendimento de novos conceitos."
+        ]
+    },
+    {
+        "titulo": "Lapso",
+        "introducao": "Com o tempo, perdi o entusiasmo por criar plugins para o Minecraft, pois a curva de aprendizado íngreme do Java tornou-se frustrante, e meu foco estava dividido entre a escola e a tentativa de me adaptar a uma nova vida social e acadêmica após uma mudança recente. Decidi dedicar-me às matérias escolares e conquistar algumas condecorações que o Colégio Militar de Brasília oferecia.",
+        "ano": "2018 - 2022",
+        "imgs": [
+            {
+                "alt": "print do meu primeiro repositório do github",
+                "url": "/assets/imgs/sobremim/inicio01.png"
+            }
+        ],
+        "desenvolvimentos": [
+            "A primeira condecoração obtida foi o Alamar, que reconhecia os alunos com média 8 ou acima em todas as matérias. Ainda naquele ano, fui honrado por poder eternizar meu nome no Livro de Honra, concedido aos alunos que não sofriam sanções disciplinares. Também fui escolhido para integrar a Legião de Honra, um seleto grupo de estudantes destacados pela sua 'lealdade e honestidade, iniciativa e nobreza de atitude, disciplina e camaradagem, estudo e amor à cultura, segundo os valores, os costumes e as tradições do Exército Brasileiro'.",
+            "Além das minhas realizações acadêmicas, também participei de diversas atividades esportivas durante minha estadia no Colégio Militar de Brasília. Tive a oportunidade de aprender e competir em provas de Orientação, além de ter treinado natação por dois anos consecutivos. Durante esse período, participei com entusiasmo dos Jogos Internos, que se tornaram memórias inesquecíveis.",
+            "Essas experiências únicas e transformadoras me permitiram crescer e tornar-me uma pessoa melhor, e sou eternamente grato por ter tido a oportunidade de estudar em uma instituição que me ensinou a ter disciplina, espírito de equipe e a trabalhar em grupo."
+        ]
+    },
+    {
+        "titulo": "Filho Pródigo",
+        "introducao": "Assim como na parábola bíblica do Filho Pródigo, eu também voltei à minha paixão pela programação. Assim como o filho bastardo, eu retornei humildemente e, para minha surpresa, consegui me adaptar facilmente e 'pensar como um dev', aproveitando a maturidade adquirida para facilitar meu aprendizado.",
+        "ano": "2022 - Atualidade",
+        "imgs": [
+            {
+                "alt": "print do meu primeiro repositório do github",
+                "url": "/assets/imgs/sobremim/inicio01.png"
+            }
+        ],
+        "desenvolvimentos": [
+            "Optei por focar no desenvolvimento profissional e escolhi o front-end como meu primeiro alvo. Recomecei do básico, me aprofundando nos conceitos de HTML, CSS e JavaScript, antes de passar para a biblioteca React. Tive facilidade em aprender a maioria dos conceitos básicos e desenvolvi alguns projetos, inicialmente usando banco de dados MongoDB e construindo APIs com Node.js e Express.",
+            "Embora tenha mantido o foco no front-end, não me limitei apenas a estudar as tecnologias relacionadas. Também tive contato com outras linguagens, como PHP e Java, e outras bibliotecas, como Sass, Bootstrap e Angular.",
+            "É importante mencionar que, durante minha jornada, eu percebi que programar não se limita apenas a escrever código. Aprendi a importância da documentação, da organização do projeto e do trabalho em equipe. Todas essas habilidades têm sido valiosas na minha carreira como desenvolvedor e sou grato por ter tido a oportunidade de aprender e crescer como pessoa e profissional."
+        ]
+    }
+]

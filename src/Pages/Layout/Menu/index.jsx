@@ -13,7 +13,7 @@ export default function Menu() {
             <ul>
                 <li><NavLink to="/" className={addBordaPaginaAtual}>Home</NavLink></li>
                 <li><NavLink to="/contatos" className={addBordaPaginaAtual}>Contato</NavLink></li>
-                <li><NavLink to="/about" className={addBordaPaginaAtual}>Sobre mim</NavLink></li>
+                <li><NavLink to="/sobremim" className={addBordaPaginaAtual}>Sobre mim</NavLink></li>
                 <li><NavLink to="/projetos" className={addBordaPaginaAtual}>Projetos</NavLink></li>
             </ul>
         </nav>

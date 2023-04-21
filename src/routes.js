@@ -4,6 +4,8 @@ import Layout from "Pages/Layout";
 import Projetos from "Pages/Projetos";
 import NotFound from "Pages/NotFound";
 import Contatos from "Pages/Contatos";
+import SobreMim from "Pages/SobreMim";
+import SobreProjetos from "Pages/SobreProjetos";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +18,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/projetos",
-        element: <Projetos />
+        element: <Projetos />,
+        children: [
+            {
+                path: "/projetos/sobre/*",
+                element: <SobreProjetos />
+            }
+        ]
       },
       {
         path: "/contatos",
         element: <Contatos />
+      },
+      {
+        path: "/sobremim",
+        element: <SobreMim />
       }
     ]
   },

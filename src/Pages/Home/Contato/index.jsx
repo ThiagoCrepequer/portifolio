@@ -21,7 +21,6 @@ export default function Contato() {
                         </Icone>
 
                         <a href='https://www.instagram.com/t.crepequer/' target='_blank' rel='noreferrer'>t.crepequer</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
                     </BlocoContato>
 
                     <BlocoContato>
@@ -30,7 +29,6 @@ export default function Contato() {
                         </Icone>
 
                         <a href='https://www.linkedin.com/in/thiago-crepequer/' target='_blank' rel='noreferrer'>thiago-crepequer</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
                     </BlocoContato>
 
                     <BlocoContato>
@@ -39,7 +37,6 @@ export default function Contato() {
                         </Icone>
 
                         <a href='email:thiago.crepequer@hotmail.com' target='_blank' rel='noreferrer'>thiago@crepequer.tk</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
                     </BlocoContato>
                 </address>
             </div>

@@ -3,21 +3,17 @@
 .card {
     border: 1px solid $cor-principal;
 
-    width: 40vw;
-    height: 220px;
+    width: 30vw;
+    height: 180px;
     margin: 10px;
-    padding: 5px; 
+    padding: 10px; 
     color: white;
 
     display: flex;
     align-items: center;
 
-    &__imagem {
-        margin: 10px;
-        
-        img {
-            width: 100px;
-        }
+    h2 {
+        margin: 0;
     }
 }
 

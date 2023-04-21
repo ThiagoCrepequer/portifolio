@@ -1,11 +1,17 @@
 import React from 'react'
 import styles from './Skills.module.scss'
 import SubTitulo from '../../../../Components/SubTitulo'
-import { getUniqueValueProjeto } from 'assets/js/getUniqueValueProjeto'
 import Icon from 'Components/Icon'
 
 export default function Skills() {
-    const skills = getUniqueValueProjeto('tecnologias')
+    const skills = [
+        "JavaScript",
+        "React",
+        "NodeJs",
+        "Express",
+        "Next",
+        "Java"
+    ]
 
     return (
         <div className={styles.skills}>

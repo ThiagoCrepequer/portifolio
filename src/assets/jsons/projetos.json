@@ -1,58 +1,220 @@
 [
     {
-        "title": "Conecte-sssse",
-        "image": "",
-        "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
+        "title": "Cores Dinâmicas",
+        "image": ["/assets/imgs/projetos/cores-dinamicas.png"],
+        "description": "Uma página que altera o fundo dinamicamente conforme o que é digitado no input",
+        "date": "2022-12-14",
         "tecnologias": [
-            "HTML",
-            "Javascript"
+            "HTML", 
+            "CSS",
+            "JavaScript"
         ],
         "stacks": [
             "Front-End"
         ]
     },
     {
-        "title": "Conecte-se",
-        "image": "",
-        "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
+        "title": "Teste de Digitação",
+        "image": ["/assets/imgs/projetos/teste-digitacao.png"],
+        "description": "Um jogo simples de digitação baseado em velocidade criado usando HTML, CSS e JavaScript",
+        "date": "2022-12-17",
         "tecnologias": [
             "HTML",
-            "Javascript",
-            "Nodejs",
-            "React"
+            "CSS",
+            "JavaScript"
         ],
         "stacks": [
             "Front-End"
         ]
     },
     {
-        "title": "Conecte-sse",
-        "image": "",
-        "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
+        "title": "Quiz",
+        "image": [
+            "/assets/imgs/projetos/quiz01.png",
+            "/assets/imgs/projetos/quiz02.png"
+        ],
+        "description": "Desafie seus conhecimentos gerais com um quiz divertido criado com HTML, CSS, JavaScript, MongoDB e hospedado com Express. Teste seus conhecimentos e divirta-se ao mesmo tempo!",
+        "date": "2022-12-24",
         "tecnologias": [
             "HTML",
             "CSS",
-            "Javascript",
-            "Nodejs",
-            "Java"
-        ],
-        "stacks": [
-            "Back-End"
-        ]
-    },
-    {
-        "title": "Conecte-ssse",
-        "image": "",
-        "description": "Um complexo projeto que conta com uma pagina de login e cadastro.",
-        "tecnologias": [
-            "CSS",
-            "Javascript",
-            "Nodejs",
-            "React"
+            "JavaScript",
+            "NodeJs",
+            "Express",
+            "MongoDB"
         ],
         "stacks": [
             "Front-End",
             "Back-End"
         ]
+    },
+    {
+        "title": "Conecte-se",
+        "image": [
+            "/assets/imgs/projetos/conecte01.png",
+            "/assets/imgs/projetos/conecte02.png",
+            "/assets/imgs/projetos/conecte03.png"
+        ],
+        "description": "Este projeto web tem quatro páginas: inicial, perfil, login e cadastro. Depois do login, informações do perfil podem ser alteradas e apareceram na página inicial para uma experiência personalizada",
+        "date": "2023-01-26",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "NodeJs",
+            "Express"
+        ],
+        "stacks": [
+            "Front-End",
+            "Back-End"
+        ]
+    },
+    {
+        "title": "Pokedex",
+        "image": [
+            "/assets/imgs/projetos/pokedex01.png",
+            "/assets/imgs/projetos/pokedex02.png"
+        ],
+        "description": "Um projeto desenvolvido com o objetivo de estudar e introduzir conhecimentos da biblioteca React",
+        "date": "2023-02-06",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "NodeJs",
+            "Express"
+        ],
+        "stacks": [
+            "Front-End",
+            "Back-End"
+        ]
+    },
+    {
+        "title": "Ghost Game",
+        "image": ["/assets/imgs/projetos/ghost-game.png"],
+        "description": "Um simples jogo baseado na movimentação do personagem principal desenvolvido usando React",
+        "date": "2023-02-13",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Git Find",
+        "image": ["/assets/imgs/projetos/git-find.png"],
+        "description": "Ferramenta de busca de perfil do github",
+        "date": "2023-03-01",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Cadastro de cartão",
+        "image": ["/assets/imgs/projetos/cadastro-cartao.png"],
+        "description": "Página feita em React que atualiza dinamicamente as informações do cartão que está sendo cadastrado",
+        "date": "2023-03-10",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Styled-Components",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Wiki Repositorios",
+        "image": ["/assets/imgs/projetos/wiki-repositorios.png"],
+        "description": "wiki de repositórios do github",
+        "date": "2023-02-26",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Organo",
+        "image": [
+            "/assets/imgs/projetos/organo01.png",
+            "/assets/imgs/projetos/organo02.png"
+        ],
+        "description": "Site desenvolvido no curso de React da Alura",
+        "date": "2023-03-21",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Calculadora React",
+        "image": [
+            "/assets/imgs/projetos/calculadora-react.png"        
+        ],
+        "description": "Site desenvolvido no curso de React da Alura",
+        "date": "2023-02-22",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Styled-Components",
+            "React"
+        ],
+        "stacks": [
+            "Front-End"
+        ]
+    },
+    {
+        "title": "Image GPT",
+        "image": ["/assets/imgs/projetos/image-gpt.png"],
+        "description": "Site feito em Next para gerar imagens usando a API da OpenAI",
+        "date": "2023-03-24",
+        "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Next"
+        ],
+        "stacks": [
+            "Front-End",
+            "Back-End"
+        ]
+    },
+    {
+        "title": "Alura Stickers",
+        "image": ["/assets/imgs/projetos/alura-stickers.png"],
+        "description": "Gerador de figurinhas consumindo a api do IMDb e manipulando a imagem com Java",
+        "date": "2023-03-30",
+        "tecnologias": [
+            "Java"
+        ],
+        "stacks": [
+            "Back-End"
+        ]
     }
+    
 ]

@@ -17,8 +17,8 @@ export default function Footer() {
         </div>
         
         <div className={styles.footer__paginas}>
-            <p><Link to="/contato">Contato</Link></p>
-            <p><Link to="/about">Sobre mim</Link></p>
+            <p><Link to="/contatos">Contato</Link></p>
+            <p><Link to="/sobremim">Sobre mim</Link></p>
             <p><Link to="/projetos">Projetos</Link></p>
         </div>
 

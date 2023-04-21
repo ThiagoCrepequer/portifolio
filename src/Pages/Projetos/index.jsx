@@ -4,6 +4,7 @@ import Titulo from '../../Components/Titulo';
 import BarraFiltros from './BarraFiltros';
 import TodosProjetos from './TodosProjetos';
 import dados from '../../assets/jsons/projetos.json'
+import { Outlet } from 'react-router-dom';
 
 export default function Projetos() {
     const [filtroStack, setFiltroStack] = useState([])
@@ -38,6 +39,8 @@ export default function Projetos() {
                 <BarraFiltros onFiltro={handleFiltro} />
                 <TodosProjetos dados={resultado}/>
             </main>
+
+            <Outlet />
         </>
 
     )
