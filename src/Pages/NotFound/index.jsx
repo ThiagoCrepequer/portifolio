@@ -8,7 +8,7 @@ export default function NotFound() {
     <main className={styles.main} style={{height: getHeight()}}>
         <h1>404</h1>
         <p>Infelizmente não econtramos essa pagina&#128549;. Se quiser retornar para a página inicial é só clicar <NavLink to='/'>aqui</NavLink> ou clicar em voltar&#128521;</p>
-        <img src='/assets/gifs/notFound01.gif' alt='gatinho balançando a cabeça'/>
+        <img src='/assets/gifs/notFound1.gif' alt='gatinho balançando a cabeça'/>
     </main>
   )
 }
