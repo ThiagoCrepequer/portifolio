@@ -1,5 +1,7 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/thiagocrepequer/portifolio/badge)](https://www.codefactor.io/repository/github/thiagocrepequer/portifolio)
+
 # Descrição
-Este projeto foi criado como meu portfólio pessoal, com o objetivo de apresentar meus projetos e habilidades da melhor forma possível. Para sua construção, utilizei principalmente a tecnologia React, além de outras ferramentas como Sass, React-Icons e Framer Motion.
+<p>Este projeto foi criado como meu portfólio pessoal, com o objetivo de apresentar meus projetos e habilidades da melhor forma possível. Para sua construção, utilizei principalmente a tecnologia React, além de outras ferramentas como Sass, React-Icons e Framer Motion.</p>
 
 # Contribuição
 Contribuições são sempre bem-vindas, não apenas na forma de códigos, mas também de ideias novas. Sinta-se à vontade para enviar sugestões de alterações ou fazer suas próprias alterações manualmente após clonar o repositório.
