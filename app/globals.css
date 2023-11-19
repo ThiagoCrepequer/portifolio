@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.responsive-width {
+    @apply flex-grow min-w-[300px] max-w-[700px];
+}
+
+.flex-center-all {
+    @apply flex justify-center items-center;
+}
+
+.icon-size {
+    @apply w-6 h-6;
+}
