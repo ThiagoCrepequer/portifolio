@@ -8,10 +8,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-.responsive-width {
-    @apply flex-grow min-w-[300px] max-w-[700px];
-}
-
 .flex-center-all {
     @apply flex justify-center items-center;
 }
