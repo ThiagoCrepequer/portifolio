@@ -15,3 +15,11 @@ html, body {
 .icon-size {
     @apply w-6 h-6;
 }
+
+.titulo {
+    @apply text-2xl font-bold;
+}
+
+.subtitulo {
+    @apply text-xl font-semibold;
+}
