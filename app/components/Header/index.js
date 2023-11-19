@@ -1,14 +1,19 @@
 import Image from "next/image";
 import SocialMedia from "./SocialMedia";
+import texts from "@constants/header_texts.json";
 import "./styles.css";
 
 export default function Header() {
     return (
-        <header id="home" className="flex-center-all h-[89vh] w-full">
+        <header id="home" className="flex-center-all h-[85vh] w-full">
                 <div className="flex flex-wrap max-w-[700px] w-full">
                     <section className="flex-center-all gap-[2px] flex-col responsive-width">
-                        <h1 className="text-3xl font-bold">Thiago Crepequer</h1>
-                        <p>Desenvolvedor Full-Stack</p>
+                        <h1 className="text-xl text-center font-bold max-w-[400px]">
+                            {texts["pt-br"].title}
+                        </h1>
+                        <p className="text-center max-w-[400px]">
+                            {texts["pt-br"].subtitle}
+                        </p>
                         <SocialMedia />
                     </section>
 
