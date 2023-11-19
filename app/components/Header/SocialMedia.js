@@ -9,13 +9,13 @@ import links from "@/constants/social_media.json";
 export default function SocialMedia() {
     return (
         <div className="flex gap-2">
-            <Link href={links.instagram}>
+            <Link target="_blank" href={links.instagram}>
                 <FaInstagram className="icon-size" />
             </Link>
-            <Link href={links.linkedin}>
+            <Link target="_blank" href={links.linkedin}>
                 <FaLinkedin className="icon-size" />
             </Link>
-            <Link href={links.github}>
+            <Link target="_blank" href={links.github}>
                 <FaGithub className="icon-size" />
             </Link>
         </div>
