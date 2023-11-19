@@ -14,9 +14,11 @@ export default function Header() {
                     <section className="flex-center-all responsive-width">
                         <Image 
                             className="rounded-full w-[250px] border-2 border-black"
-                            src="/perfil.jpg"
-                            width={100} 
-                            height={100} 
+                            src="/perfil.webp"
+                            width={2208} 
+                            height={2208}
+                            quality={100}
+                            priority={true}
                         />
                     </section>
                 </div>
