@@ -1,0 +1,3 @@
+.default-padding {
+    @apply py-[2px] px-[9px];
+}

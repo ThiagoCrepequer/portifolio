@@ -1,0 +1,12 @@
+{
+    "pt-br": {
+        "cod": "pt-br",
+        "name": "Português",
+        "icon": "/icons/br.svg"
+    },
+    "en": {
+        "cod": "en",
+        "name": "English",
+        "icon": "/icons/us.svg"
+    }
+}

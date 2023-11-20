@@ -6,10 +6,7 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-.responsive-width {
-    @apply flex-grow min-w-[300px] max-w-[700px];
+    @apply font-sans text-black;
 }
 
 .flex-center-all {
@@ -18,4 +15,12 @@ html, body {
 
 .icon-size {
     @apply w-6 h-6;
+}
+
+.titulo {
+    @apply text-2xl font-bold;
+}
+
+.subtitulo {
+    @apply text-xl font-semibold;
 }
