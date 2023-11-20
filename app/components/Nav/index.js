@@ -1,13 +1,14 @@
 import Link from "next/link";
 import "./styles.css";
+import LanguageLi from "./LanguageLi";
 
 export default function Nav() {
     return (
         <nav className="absolute right-0 mr-12 mt-4">
-            <ul className="flex gap-4">
-                <li className="default-padding font-bold border-2 border-black rounded-[5px]">
+            <ul className="flex gap-2 items-center">
+                <li className="default-padding text-white bg-black rounded-[4px]">
                     <Link href="#home">
-                        Home
+                        Hire me!
                     </Link>
                 </li>
 
@@ -22,7 +23,9 @@ export default function Nav() {
                         Blog
                     </Link>
                 </li>
-            </ul>  
+
+                <LanguageLi />
+            </ul>
         </nav>
     )
 }
