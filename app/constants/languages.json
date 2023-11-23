@@ -2,11 +2,11 @@
     "pt-br": {
         "cod": "pt-br",
         "name": "Português",
-        "icon": "/icons/br.svg"
+        "icon": "/icons/pt-br.svg"
     },
     "en": {
         "cod": "en",
         "name": "English",
-        "icon": "/icons/us.svg"
+        "icon": "/icons/en.svg"
     }
 }

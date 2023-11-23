@@ -1,3 +1,0 @@
-.responsive-width {
-    @apply flex-grow min-w-[300px] max-w-[800px];
-}
