@@ -1,12 +1,16 @@
-'use client'
+'use client';
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import languages from "@constants/languages.json";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import Image from "next/image";
+import useLanguage from "@/hooks/useLanguage";
+import { useRouter } from "next/navigation";
+import texts from '@/constants/language/nav.json'
 
 export default function LanguagehBox() {
+    const router = useRouter()
+    const language = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
-    const { language, changeLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
         const handleClick = (event) => {
@@ -29,13 +33,15 @@ export default function LanguagehBox() {
             <button
                 id="language-button"
                 type="button"
-                className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-800"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <img
-                    className="w-7"
-                    src={languages[language].icon}
-                    alt={languages[language].name}
+                <Image
+                    src={'/icons/' + language + '.svg'}
+                    width={640}
+                    height={480}
+                    className="w-10"
+                    alt={texts[language].selected_language}
                 />
                 <svg
                     className="-me-1 ms-2 h-5 w-5"
@@ -64,11 +70,13 @@ export default function LanguagehBox() {
                                 key={index}
                                 className="flex justify-start items-center gap-2 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                 onClick={() => {
-                                    changeLanguage(language.cod)
+                                    router.push(`?lang=${language.cod}`);
                                 }}
                             >
-                                <img
+                                <Image
                                     className="w-7"
+                                    width={640}
+                                    height={480}
                                     src={language.icon}
                                     alt={language.name}
                                 />

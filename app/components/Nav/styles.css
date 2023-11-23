@@ -1,3 +1,7 @@
 .default-padding {
-    @apply py-[2px] px-[9px];
+    @apply py-[8px] px-[6px] md:px-[9px];
+}
+
+.default-size {
+    @apply text-lg md:text-xl;
 }

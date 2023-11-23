@@ -14,7 +14,7 @@ html, body {
 }
 
 .icon-size {
-    @apply w-6 h-6;
+    @apply w-8 h-8;
 }
 
 .titulo {
