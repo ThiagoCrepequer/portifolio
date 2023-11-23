@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./styles.css";
-import LanguageLi from "./LanguageLi";
+import LanguagehBox from "./LanguageBox";
 
 export default function Nav() {
     return (
@@ -24,7 +24,9 @@ export default function Nav() {
                     </Link>
                 </li>
 
-                <LanguageLi />
+                <li className="default-padding">
+                    <LanguagehBox />
+                </li>
             </ul>
         </nav>
     )

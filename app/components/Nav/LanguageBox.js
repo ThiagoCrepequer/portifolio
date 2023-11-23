@@ -1,12 +1,11 @@
-'use client'
+'use client';
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import languages from "@constants/languages.json";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export default function LanguagehBox() {
     const [isOpen, setIsOpen] = useState(false);
-    const { language, changeLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
         const handleClick = (event) => {
@@ -32,10 +31,8 @@ export default function LanguagehBox() {
                 className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <img
+                <Image
                     className="w-7"
-                    src={languages[language].icon}
-                    alt={languages[language].name}
                 />
                 <svg
                     className="-me-1 ms-2 h-5 w-5"
@@ -67,7 +64,7 @@ export default function LanguagehBox() {
                                     changeLanguage(language.cod)
                                 }}
                             >
-                                <img
+                                <Image
                                     className="w-7"
                                     src={language.icon}
                                     alt={language.name}
