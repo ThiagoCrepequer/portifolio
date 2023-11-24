@@ -1,0 +1,7 @@
+.teste {
+    transition: all 0.5s ease-in-out;
+}
+
+.teste2 {
+    transform: scaleX(1.5);
+}
