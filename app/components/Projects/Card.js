@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Card({title, description, children}) {
     return (
         <div className="flex-center-all flex-col min-w-[200px] border-2 border-black rounded-md">

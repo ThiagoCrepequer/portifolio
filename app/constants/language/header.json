@@ -1,10 +1,10 @@
 {
     "pt-br": {
         "title": "Olá!👋 Eu sou o Thiago Crepequer",
-        "subtitle": "Desenvolvedor Full-Stack na missão de transformar café em código!"
+        "subtitle": "Desenvolvedor Full-Stack na missão de transformar café<img src='/coffee.gif' width='30' style='display: inline-block; mix-blend-mode: multiply;' alt='xícara de café'/> em código!"
     },
     "en": {
         "title": "Hello!👋 I'm Thiago Crepequer",
-        "subtitle": "Full-Stack Developer on a mission to transform coffee into code!"
+        "subtitle": "Full-Stack Developer on a mission to transform coffee<img src='/coffee.gif' width='30' style='display: inline-block; mix-blend-mode: multiply;' alt='cup of coffee'/> into code!"
     }
 }
