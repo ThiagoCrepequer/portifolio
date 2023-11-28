@@ -26,7 +26,7 @@ export default function Load() {
         const handleLoad = () => {
             const loading = document.getElementById('loading');
             loading.classList.add('opacity-0');
-
+            console.log('readyState complete2');
             setTimeout(() => {
                 setLoading(false);
             }, 1000);
@@ -34,6 +34,7 @@ export default function Load() {
 
         if (document.readyState === "complete") {
             handleLoad();
+            console.log('readyState complete');
         }
     }, []);
 
