@@ -30,8 +30,9 @@ export default function Load() {
                 setLoading(false);
             }, 1000);
         };
-
-        handleLoad();
+        setTimeout(() => {
+            handleLoad();
+        }, 1000);
     }, [])
 
     return (
