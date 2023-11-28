@@ -1,11 +1,13 @@
 import About from "./components/About";
 import Header from "./components/Header";
+import Load from "./components/Load";
 import Nav from "./components/Nav";
-import Projects from "./components/Projects";
 
 export default function Home() {
     return (
         <>
+            <Load />
+
             <Nav />
             <Header />
 
