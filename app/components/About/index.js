@@ -10,8 +10,8 @@ export default function About() {
             <h1 className="titulo">{texts[langauge].title} 👨🏻‍💻</h1>
             <h2 className="max-w-[1000px] text-center">{texts[langauge].subtitle}</h2>
 
-            <div className="w-full flex justify-center mt-12">
-                <aside className="flex flex-col justify-center">
+            <div className="max-w-[1000px] flex flex-col justify-center mt-12">
+                <aside className="flex justify-center">
                     {texts[langauge].menus.map((menu, index) => (
                         <button 
                             key={index} 

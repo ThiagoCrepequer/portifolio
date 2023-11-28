@@ -25,12 +25,10 @@ export default function Load() {
     useLayoutEffect(() => {
         const handleLoad = () => {
             const loadingElement = document.getElementById('loading');
-            if (loadingElement) {
-                loadingElement.classList.add('opacity-0');
-                setTimeout(() => {
-                    setLoading(false);
-                }, 1000);
-            }
+            loadingElement.classList.add('opacity-0');
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
         };
 
         handleLoad();
