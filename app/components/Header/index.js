@@ -16,7 +16,6 @@ export default function Header() {
                         width={2208}
                         height={2208}
                         quality={100}
-                        priority={true}
                     />
                 </section>
             </div>

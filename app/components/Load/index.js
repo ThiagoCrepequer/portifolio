@@ -43,10 +43,11 @@ export default function Load() {
             ? <div className="absolute w-full h-full flex gap-4 flex-col justify-center items-center bg-white z-10" id="loading">
                 <div className="logo">
                     <Image
-                        src="/logo.png"
+                        src="/logo.webp"
                         alt="Logo"
                         width={100}
                         height={100}
+                        priority={true}
                     />
                 </div>
                 <div className="w-[100px]">
