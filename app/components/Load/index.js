@@ -27,7 +27,6 @@ export default function Load() {
             const loadingElement = document.getElementById('loading');
             if (loadingElement) {
                 loadingElement.classList.add('opacity-0');
-                console.log('Página completamente carregada');
                 setTimeout(() => {
                     setLoading(false);
                 }, 1000);
