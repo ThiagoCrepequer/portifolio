@@ -1,0 +1,20 @@
+{
+    "pt-br": {
+        "title": "Sobre mim",
+        "subtitle": "Meu nome é Thiago, tenho 18 anos, estou cursando Engenharia de Software. Sou apaixonado por tecnologia e por programação, e estou sempre buscando aprender mais e mais sobre esses assuntos.",
+        "menus": [
+            "Engenharia de Software",
+            "Front-end",
+            "Back-end"
+        ]
+    },
+    "en": {
+        "title": "About me",
+        "subtitle": "My name is Thiago, I'm 18 years old, I'm studying Software Engineering. I'm passionate about technology and programming, and I'm always looking to learn more and more about these subjects.",
+        "menus": [
+            "Software Engineering",
+            "Front-end",
+            "Back-end"
+        ]
+    }
+}
