@@ -24,23 +24,21 @@ export default function Load() {
 
     useLayoutEffect(() => {
         const handleLoad = () => {
-            const loading = document.getElementById('loading');
-            loading.classList.add('opacity-0');
-            console.log('readyState complete2');
-            setTimeout(() => {
-                setLoading(false);
-            }, 1000);
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.classList.add('opacity-0');
+                console.log('Página completamente carregada');
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1000);
+            }
         };
 
-        if (document.readyState === "complete") {
-            handleLoad();
-            console.log('readyState complete');
-        }
-    }, []);
-
+        handleLoad();
+    }, [])
 
     return (
-        loading 
+        loading
             ? <div className="absolute w-full h-full flex gap-4 flex-col justify-center items-center bg-white z-10" id="loading">
                 <div className="logo">
                     <Image
