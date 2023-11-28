@@ -9,7 +9,6 @@ export default function Carousel() {
     const language = useLanguage();
     const [projects, setProjects] = useState(projetos[language]);
     const DELAY_DURATION = 500;
-    const MOVEMENT_SIZE = ((30 / 100) * window.innerWidth);
     let lastScrollTime = 0;
 
     function scrollTo(element, to, duration, callback = () => { }) {
@@ -45,11 +44,11 @@ export default function Carousel() {
         if (Date.now() - lastScrollTime < 2000) return;
 
         const carousel = document.getElementById('carousel');
-        scrollTo(carousel, MOVEMENT_SIZE, DELAY_DURATION, () => {
+        scrollTo(carousel, 380, DELAY_DURATION, () => {
             const newProjects = [...projects];
             newProjects.push(newProjects.shift());
             setProjects(newProjects);
-            carousel.scrollLeft -= MOVEMENT_SIZE;
+            carousel.scrollLeft -= 380;
         });
     }
 
@@ -57,10 +56,11 @@ export default function Carousel() {
         if (Date.now() - lastScrollTime < 2000) return;
 
         const carousel = document.getElementById('carousel');
-        scrollTo(carousel, -MOVEMENT_SIZE, DELAY_DURATION, () => {
+        scrollTo(carousel, -380, DELAY_DURATION, () => {
             const newProjects = [...projects];
             newProjects.unshift(newProjects.pop());
-            carousel.scrollLeft += MOVEMENT_SIZE;
+            setProjects(newProjects);
+            carousel.scrollLeft += 380;
         });
     }
 
