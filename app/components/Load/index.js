@@ -37,7 +37,7 @@ export default function Load() {
 
     return (
         loading
-            ? <div className="absolute w-full h-full flex gap-4 flex-col justify-center items-center bg-white z-10" id="loading">
+            ? <div className="fixed w-full h-full flex gap-4 flex-col justify-center items-center bg-white z-10" id="loading">
                 <div className="logo">
                     <Image
                         src="/logo.webp"

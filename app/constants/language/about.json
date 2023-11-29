@@ -2,11 +2,32 @@
     "pt-br": {
         "title": "Sobre mim",
         "subtitle": "Meu nome é Thiago, tenho 18 anos, estou cursando Engenharia de Software. Sou apaixonado por tecnologia e por programação, e estou sempre buscando aprender mais e mais sobre esses assuntos.",
-        "menus": [
-            "Engenharia de Software",
-            "Front-end",
-            "Back-end"
-        ]
+        "menus": {
+            "Engenharia de Software": {
+                "title": "Bachaerlado em Engenharia de Software",
+                "subtitle": "",
+                "description": "Lorem ipsum dolor sit amet. Ea fuga dolor aut repudiandae neque At omnis dolorem. Ut voluptatem fuga qui odit pariatur est rerum voluptatem aut voluptas modi id nulla quisquam non corporis officiis vel modi error. Ut minus alias qui optio officia ex voluptas omnis! Vel voluptates illum quo iure quidem ea accusamus magnam id provident ducimus et dolores voluptatem et delectus Quis non molestiae eveniet.",
+                "techonoliges": []
+            },
+            "Front-end": {
+                "title": "Desebvolvimento Front-end",
+                "subtitle": "",
+                "description": "Lorem ipsum dolor sit amet. Ea fuga dolor aut repudiandae neque At omnis dolorem. Ut voluptatem fuga qui odit pariatur est rerum voluptatem aut voluptas modi id nulla quisquam non corporis officiis vel modi error. Ut minus alias qui optio officia ex voluptas omnis! Vel voluptates illum quo iure quidem ea accusamus magnam id provident ducimus et dolores voluptatem et delectus Quis non molestiae eveniet.",
+                "techonoliges": []
+            },
+            "Back-end": {
+                "title": "Desebvolvimento Back-end",
+                "subtitle": "",
+                "description": "Lorem ipsum dolor sit amet. Ea fuga dolor aut repudiandae neque At omnis dolorem. Ut voluptatem fuga qui odit pariatur est rerum voluptatem aut voluptas modi id nulla quisquam non corporis officiis vel modi error. Ut minus alias qui optio officia ex voluptas omnis! Vel voluptates illum quo iure quidem ea accusamus magnam id provident ducimus et dolores voluptatem et delectus Quis non molestiae eveniet.",
+                "techonoliges": []
+            },
+            "Outros": {
+                "title": "Outros conhecimentos e experiências",
+                "subtitle": "",
+                "description": "Lorem ipsum dolor sit amet. Ea fuga dolor aut repudiandae neque At omnis dolorem. Ut voluptatem fuga qui odit pariatur est rerum voluptatem aut voluptas modi id nulla quisquam non corporis officiis vel modi error. Ut minus alias qui optio officia ex voluptas omnis! Vel voluptates illum quo iure quidem ea accusamus magnam id provident ducimus et dolores voluptatem et delectus Quis non molestiae eveniet.",
+                "techonoliges": []
+            }
+        }
     },
     "en": {
         "title": "About me",
