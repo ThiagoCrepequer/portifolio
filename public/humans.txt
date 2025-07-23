@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: Thiago Crepequer
+Contact: thiago@crepequer.dev
+Twitter: @thiagocrepequer
+From: São Paulo, SP - Brasil
+
+/* SITE */
+Last update: 2025/07/23
+Language: Português
+Doctype: HTML5
+IDE: Visual Studio Code
+Technologies: React, TypeScript, Vite, Java, Spring Boot, PostgreSQL, Docker, AWS
+
+/* THANKS */
+Node.js community
+React team
+Open source contributors
+Stack Overflow community

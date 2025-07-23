@@ -1,0 +1,129 @@
+{
+  "header": {
+    "brand": "<Crepequer.dev />",
+    "nav": {
+      "about": "About",
+      "technologies": "Technologies",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "title": "Full-Stack",
+    "subtitle": "Developer",
+    "cta": {
+      "contact": "Get in Touch",
+      "projects": "View Projects"
+    }
+  },
+  "about": {
+    "title": "About Me"
+  },
+  "technologies": {
+    "title": "Technologies",
+    "subtitle": "Tools and languages I use daily",
+    "categories": {
+      "Backend": "Backend",
+      "Frontend": "Frontend",
+      "Database": "Database",
+      "Cloud": "Cloud",
+      "Language": "Language",
+      "DevOps": "DevOps",
+      "Tools": "Tools",
+      "OS": "Operating System",
+      "Mobile": "Mobile",
+      "AI": "Artificial Intelligence"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "My journey as a developer",
+    "viewMore": "View more on LinkedIn"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of my most recent work",
+    "buttons": {
+      "github": "View on GitHub",
+      "demo": "Open"
+    }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Get in touch with me to discuss your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "personal": {
+    "name": "Thiago Crepequer",
+    "title": "Full-Stack Developer",
+    "description": "Specialist in Java, React and React Native. Creating robust and scalable digital solutions.",
+    "about": {
+      "intro": "Hello! I'm Thiago Crepequer, a full-stack developer with over 3 years of experience creating web and mobile applications. Specialized in Java, React and React Native, with a focus on scalable architectures and clean code. I'm an AI enthusiast and its applicability.",
+      "achievements": [
+        {
+          "title": "Brazilian Army Medal",
+          "description": "Recognition for technological contribution to the Brazilian Army."
+        },
+        {
+          "title": "Google Cloud Computing Foundation",
+          "description": "Certification in Google Cloud Platform cloud computing fundamentals."
+        }
+      ]
+    },
+    "contact": {
+      "email": "thiago@crepequer.dev",
+      "location": "Brasília, DF - Brazil",
+      "github": "https://github.com/thiagocrepequer",
+      "linkedin": "https://linkedin.com/in/thiagocrepequer"
+    }
+  },
+  "experiences": [
+    {
+      "title": "Mid-Level Full-Stack Developer",
+      "company": "NeuroSteps",
+      "logo": "/logos/neurosteps.webp",
+      "period": "2024 - Present",
+      "description": "I develop web and mobile applications with React, React Native and Java Spring Boot. I'm responsible for system architecture, mentoring junior developers and implementing artificial intelligence solutions."
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Brazilian Army",
+      "logo": "/logos/eb.webp",
+      "period": "2024 - 2025",
+      "description": "I developed the official Brazilian Army uniforms application (RUE - Quick Guide) in partnership with SGEx, using modern technologies to serve thousands of users."
+    }
+  ],
+  "projectsList": [
+    {
+      "title": "RUE - Quick Guide",
+      "description": "Official Brazilian Army uniforms application, developed in partnership with SGEx.",
+      "technologies": ["Brazilian Army Medal"],
+      "github": "",
+      "demo": "https://play.google.com/store/apps/details?id=com.thiagocrepequer.rue"
+    },
+    {
+      "title": "My Menu",
+      "description": "Platform that democratizes technology access for small and medium restaurants, offering order management, price calculation, and digital menu.",
+      "technologies": ["React Native", "Node.js", "PostgreSQL"],
+      "github": "https://github.com/my-menu-dotnet",
+      "demo": "https://my-menu.net"
+    }
+  ]
+}

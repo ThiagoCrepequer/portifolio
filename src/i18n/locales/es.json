@@ -1,0 +1,129 @@
+{
+  "header": {
+    "brand": "<Crepequer.dev />",
+    "nav": {
+      "about": "Acerca de",
+      "technologies": "Tecnologías",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "title": "Desarrollador",
+    "subtitle": "Full-Stack",
+    "cta": {
+      "contact": "Ponte en Contacto",
+      "projects": "Ver Proyectos"
+    }
+  },
+  "about": {
+    "title": "Acerca de Mí"
+  },
+  "technologies": {
+    "title": "Tecnologías",
+    "subtitle": "Herramientas y lenguajes que uso diariamente",
+    "categories": {
+      "Backend": "Backend",
+      "Frontend": "Frontend",
+      "Database": "Base de Datos",
+      "Cloud": "Nube",
+      "Language": "Lenguaje",
+      "DevOps": "DevOps",
+      "Tools": "Herramientas",
+      "OS": "Sistema Operativo",
+      "Mobile": "Móvil",
+      "AI": "Inteligencia Artificial"
+    }
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "subtitle": "Mi viaje como desarrollador",
+    "viewMore": "Ver más en LinkedIn"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos más recientes",
+    "buttons": {
+      "github": "Ver en GitHub",
+      "demo": "Abrir"
+    }
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Ponte en contacto conmigo para discutir tu próximo proyecto",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar mensaje. Inténtalo de nuevo."
+    },
+    "info": {
+      "email": "Correo",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "personal": {
+    "name": "Thiago Crepequer",
+    "title": "Desarrollador Full-Stack",
+    "description": "Especialista en Java, React y React Native. Creando soluciones digitales robustas y escalables.",
+    "about": {
+      "intro": "¡Hola! Soy Thiago Crepequer, desarrollador full-stack con más de 3 años de experiencia creando aplicaciones web y móviles. Especializado en Java, React y React Native, con enfoque en arquitecturas escalables y código limpio. Soy entusiasta de IA y su aplicabilidad.",
+      "achievements": [
+        {
+          "title": "Medalla del Ejército Brasileño",
+          "description": "Reconocimiento por contribución tecnológica al Ejército Brasileño."
+        },
+        {
+          "title": "Google Cloud Computing Foundation",
+          "description": "Certificación en fundamentos de computación en la nube de Google Cloud Platform."
+        }
+      ]
+    },
+    "contact": {
+      "email": "thiago@crepequer.dev",
+      "location": "Brasília, DF - Brasil",
+      "github": "https://github.com/thiagocrepequer",
+      "linkedin": "https://linkedin.com/in/thiagocrepequer"
+    }
+  },
+  "experiences": [
+    {
+      "title": "Desarrollador Full-Stack Semi-Senior",
+      "company": "NeuroSteps",
+      "logo": "/logos/neurosteps.webp",
+      "period": "2024 - Presente",
+      "description": "Desarrollo aplicaciones web y móviles con React, React Native y Java Spring Boot. Soy responsable de la arquitectura de sistemas, mentoría de desarrolladores junior e implementación de soluciones con inteligencia artificial."
+    },
+    {
+      "title": "Desarrollador Full-Stack",
+      "company": "Ejército Brasileño",
+      "logo": "/logos/eb.webp",
+      "period": "2024 - 2025",
+      "description": "Desarrollé la aplicación oficial de uniformes del Ejército Brasileño (RUE - Guía Rápida) en asociación con SGEx, utilizando tecnologías modernas para atender a miles de usuarios."
+    }
+  ],
+  "projectsList": [
+    {
+      "title": "RUE - Guía Rápida",
+      "description": "Aplicación oficial de uniformes del Ejército Brasileño, desarrollada en asociación con SGEx.",
+      "technologies": ["Medalla del Ejército Brasileño"],
+      "github": "",
+      "demo": "https://play.google.com/store/apps/details?id=com.thiagocrepequer.rue"
+    },
+    {
+      "title": "My Menu",
+      "description": "Plataforma que democratiza el acceso a la tecnología para pequeños y medianos restaurantes, ofreciendo gestión de pedidos, cálculo de precios y menú digital.",
+      "technologies": ["React Native", "Node.js", "PostgreSQL"],
+      "github": "https://github.com/my-menu-dotnet",
+      "demo": "https://my-menu.net"
+    }
+  ]
+}
