@@ -1,35 +1,92 @@
 {
   "name": "Thiago Crepequer - Desenvolvedor Full-Stack",
   "short_name": "Thiago Crepequer",
-  "description": "Portfólio de Thiago Crepequer - Desenvolvedor Full-Stack especializado em Java, React e React Native",
+  "description": "Portfólio de Thiago Crepequer - Desenvolvedor Full-Stack especializado em Java, React e React Native. Medalha Exército Brasileiro por contribuição tecnológica.",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/favicon-16x16.png",
       "sizes": "16x16",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/favicon-32x32.png",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "developer", "technology"],
+  "categories": ["portfolio", "developer", "technology", "full-stack", "java", "react"],
   "lang": "pt-BR",
-  "orientation": "portrait-primary"
+  "orientation": "any",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Sobre",
+      "short_name": "Sobre",
+      "description": "Informações sobre Thiago Crepequer",
+      "url": "/#about",
+      "icons": [
+        {
+          "src": "/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Projetos",
+      "short_name": "Projetos",
+      "description": "Projetos desenvolvidos por Thiago Crepequer",
+      "url": "/#projects",
+      "icons": [
+        {
+          "src": "/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contato",
+      "short_name": "Contato",
+      "description": "Entre em contato com Thiago Crepequer",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Portfolio Overview"
+    }
+  ]
 }

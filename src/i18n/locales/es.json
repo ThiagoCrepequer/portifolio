@@ -74,8 +74,9 @@
     "name": "Thiago Crepequer",
     "title": "Desarrollador Full-Stack",
     "description": "Especialista en Java, React y React Native. Creando soluciones digitales robustas y escalables.",
+    "keywords": "desarrollador, full-stack, java, react, react native, postgresql, thiago crepequer, spring boot, typescript, docker, aws, neurosteps, ejército brasileño, brasília, medalla ejército brasileño, google cloud, inteligencia artificial, arquitectura de sistemas, móvil, web",
     "about": {
-      "intro": "¡Hola! Soy Thiago Crepequer, desarrollador full-stack con más de 3 años de experiencia creando aplicaciones web y móviles. Especializado en Java, React y React Native, con enfoque en arquitecturas escalables y código limpio. Soy entusiasta de IA y su aplicabilidad.",
+      "intro": "Desarrollador Full-Stack con más de 3 años de experiencia creando aplicaciones web y móviles. Especializado en Java, React y React Native, con enfoque en arquitecturas escalables y código limpio. Medalla del Ejército Brasileño por contribución tecnológica.",
       "achievements": [
         {
           "title": "Medalla del Ejército Brasileño",

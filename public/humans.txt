@@ -1,18 +1,41 @@
 /* TEAM */
 Developer: Thiago Crepequer
+Role: Full-Stack Developer
 Contact: thiago@crepequer.dev
-Twitter: @thiagocrepequer
-From: São Paulo, SP - Brasil
+GitHub: github.com/thiagocrepequer
+LinkedIn: linkedin.com/in/thiagocrepequer
+From: Brasília, DF - Brasil
+
+/* EXPERIENCE */
+Current: Mid-Level Full-Stack Developer at NeuroSteps (2024 - Present)
+Previous: Full-Stack Developer at Brazilian Army (2024 - 2025)
+Specialization: Java, React, React Native, System Architecture, AI Implementation
+Awards: Brazilian Army Medal for technological contribution
 
 /* SITE */
 Last update: 2025/07/23
-Language: Português
+Languages: Português (pt-BR), English (en), Español (es)
 Doctype: HTML5
 IDE: Visual Studio Code
-Technologies: React, TypeScript, Vite, Java, Spring Boot, PostgreSQL, Docker, AWS
+Framework: React + TypeScript + Vite
+Backend Technologies: Java, Spring Boot, Node.js
+Database: PostgreSQL
+Infrastructure: Docker, AWS, Google Cloud Platform
+Mobile: React Native
+AI Tools: OpenAI, Gemini
+
+/* PROJECTS */
+RUE - Quick Guide: Official Brazilian Army uniforms app
+My Menu: Restaurant management platform
+Portfolio: Personal website with i18n support
 
 /* THANKS */
 Node.js community
 React team
+Spring Boot team
 Open source contributors
 Stack Overflow community
+Brazilian Army (SGEx)
+NeuroSteps team
+Google Cloud Platform
+AWS Community
