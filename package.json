@@ -1,7 +1,7 @@
 {
   "name": "thiago-crepequer-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,17 +21,18 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.10.0",
     "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^24.1.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^7.0.5"
   }
 }
