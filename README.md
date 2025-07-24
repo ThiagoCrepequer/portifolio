@@ -1,6 +1,6 @@
 # Portfolio - Thiago Crepequer
 
-[![Website](https://img.shields.io/badge/Website-crepequer.dev-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://crepequer.dev)
+[![Website](https://img.shields.io/badge/Website-crepequer.dev-000000?style=for-the-badge&logo=globe&logoColor=white)](https://crepequer.dev)
 
 Portfólio pessoal desenvolvido com React, TypeScript e Vite, com suporte a internacionalização (i18n) em três idiomas e otimizações de SEO.
 
