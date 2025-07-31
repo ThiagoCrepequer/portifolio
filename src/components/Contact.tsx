@@ -60,7 +60,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>{t("contact.form.send")}</CardTitle>
               <CardDescription>Preencha o formulário abaixo e entrarei em contato em breve</CardDescription>
@@ -96,7 +96,7 @@ const Contact = () => {
                 </Button>
               </form>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
