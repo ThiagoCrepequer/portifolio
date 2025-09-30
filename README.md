@@ -56,6 +56,23 @@ npm run build      # Build para produção
 npm run preview    # Preview da build
 ```
 
+## ✉️ Enviar e-mails (EmailJS)
+
+Este projeto pode enviar mensagens a partir do formulário de contato usando EmailJS.
+
+1. Crie um arquivo `.env` na raiz com as variáveis abaixo (você pode copiar `.env.example`):
+
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+2. Configure um serviço e um template no EmailJS (https://www.emailjs.com) e preencha as variáveis.
+
+Após isso o formulário de contato em `src/components/Contact.tsx` enviará as mensagens usando EmailJS.
+
+
 ##  Contato
 
 - **Website**: [crepequer.dev](https://crepequer.dev)
