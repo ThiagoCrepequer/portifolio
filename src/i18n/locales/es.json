@@ -85,6 +85,10 @@
         {
           "title": "Google Cloud Computing Foundation",
           "description": "Certificación en fundamentos de computación en la nube de Google Cloud Platform."
+        },
+        {
+          "title": "Google Cloud Cybersecurity",
+          "description": "Certificación en principios de ciberseguridad y prácticas de protección en Google Cloud."
         }
       ]
     },
