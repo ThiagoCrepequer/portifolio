@@ -83,7 +83,7 @@ function RouteComponent() {
             <li key={post.id}>
               <a href={`/blog/${post.slug}`} className="flex flex-col gap-1">
                 <span className="text-2xl font-bold">{post.title}</span>
-                <p className="text-gray-700">{post.content.slice(0, 100)}...</p>
+                <p className="text-gray-700 line-clamp-3">{post.excerpt}</p>
                 <p>
                   {format(new Date(post.created_at), "dd 'de' MMMM 'de' yyyy", {
                     locale: ptBR,

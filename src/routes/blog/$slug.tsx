@@ -8,6 +8,10 @@ import {
 } from "@/components/ui/breadcrumb";
 import { getPostFromSlug } from "@/data/post";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { EDITOR_JS_TOOLS } from "@/lib/editorTools";
+import { createReactEditorJS } from "react-editor-js";
+
+const ReactEditorJS = createReactEditorJS();
 
 export const Route = createFileRoute("/blog/$slug")({
   component: RouteComponent,
@@ -24,6 +28,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function RouteComponent() {
   const post = Route.useLoaderData();
+
   return (
     <section className="py-20">
       <div className="h-16"></div>
@@ -43,7 +48,18 @@ function RouteComponent() {
         </Breadcrumb>
         <div className="mt-6">
           <h1 className="text-4xl font-bold mb-4">{post?.title}</h1>
-          <p className="text-gray-700 whitespace-pre-wrap">{post?.content}</p>
+
+          <ReactEditorJS
+            readOnly
+            hideToolbar
+            holder="holder"
+            tools={EDITOR_JS_TOOLS}
+            defaultValue={{
+              time: Date.now(),
+              blocks: JSON.parse(post?.content || "{}"),
+              version: "2.26.5",
+            }}
+          />
         </div>
       </div>
     </section>
