@@ -1,8 +1,8 @@
+import { useClickOutside } from "@/hooks/useClickOutside";
+import { useTranslation } from "@/hooks/useTranslation";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useClickOutside } from "../hooks/useClickOutside";
 
-const LanguageSelector = () => {
+export const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useClickOutside(() => setIsOpen(false));
@@ -60,5 +60,3 @@ const LanguageSelector = () => {
     </div>
   );
 };
-
-export default LanguageSelector;

@@ -10,22 +10,21 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/Card";
-import Button from "./ui/Button";
-import Input from "./ui/Input";
-import Textarea from "./ui/Textarea";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<null | "success" | "error">(null);
   const formRef = useRef<HTMLFormElement | null>(null);
-
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,13 +41,12 @@ const Contact = () => {
     setStatus(null);
 
     try {
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         SERVICE_ID,
         TEMPLATE_ID,
         formRef.current,
         PUBLIC_KEY
       );
-      console.log("EmailJS result:", result);
       setStatus("success");
       formRef.current.reset();
       toast.success(t("contact.form.success"));
@@ -194,17 +192,6 @@ const Contact = () => {
               </form>
             </CardContent>
           </Card>
-          {/* Toast container for notifications */}
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
         </div>
       </div>
     </section>

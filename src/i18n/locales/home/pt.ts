@@ -1,0 +1,151 @@
+export const pt = {
+  header: {
+    brand: "<Crepequer.dev />",
+    nav: {
+      about: "Sobre",
+      technologies: "Tecnologias",
+      experience: "Experiências",
+      projects: "Projetos",
+      contact: "Contato",
+    },
+  },
+  hero: {
+    title: "Desenvolvedor",
+    subtitle: "Full-Stack",
+    cta: {
+      contact: "Entre em Contato",
+      projects: "Ver Projetos",
+    },
+  },
+  about: {
+    title: "Sobre Mim",
+  },
+  technologies: {
+    title: "Tecnologias",
+    subtitle: "Ferramentas e linguagens que uso no dia a dia",
+    categories: {
+      Backend: "Backend",
+      Frontend: "Frontend",
+      Database: "Banco de Dados",
+      Cloud: "Nuvem",
+      Language: "Linguagem",
+      DevOps: "DevOps",
+      Tools: "Ferramentas",
+      OS: "Sistema Operacional",
+      Mobile: "Mobile",
+      AI: "Inteligência Artificial",
+    },
+  },
+  experience: {
+    title: "Experiência Profissional",
+    subtitle: "Minha jornada como desenvolvedor",
+    viewMore: "Ver mais no LinkedIn",
+  },
+  projects: {
+    title: "Projetos",
+    subtitle: "Alguns dos meus trabalhos mais recentes",
+    buttons: {
+      github: "Ver no GitHub",
+      demo: "Abrir",
+    },
+  },
+  contact: {
+    title: "Vamos Conversar",
+    subtitle: "Entre em contato comigo para discutirmos seu próximo projeto",
+    form: {
+      name: "Nome",
+      email: "Email",
+      message: "Mensagem",
+      send: "Enviar Mensagem",
+      sending: "Enviando...",
+      success: "Mensagem enviada com sucesso!",
+      error: "Erro ao enviar mensagem. Tente novamente.",
+    },
+    info: {
+      email: "Email",
+      phone: "Telefone",
+      location: "Localização",
+    },
+  },
+  footer: {
+    rights: "Todos os direitos reservados.",
+  },
+  personal: {
+    name: "Thiago Crepequer",
+    title: "Desenvolvedor Full-Stack",
+    description:
+      "Especialista em Java, React e React Native. Criando soluções digitais robustas e escaláveis.",
+    keywords:
+      "desenvolvedor, full-stack, java, react, react native, postgresql, thiago crepequer, spring boot, typescript, docker, aws, neurosteps, exército brasileiro, brasília, medalha eb, google cloud, inteligência artificial, arquitetura de sistemas, mobile, web",
+    about: {
+      intro:
+        "Desenvolvedor Full-Stack com mais de 3 anos de experiência criando aplicações web e mobile. Especializado em Java, React e React Native, com foco em arquiteturas escaláveis e código limpo. Medalha Exército Brasileiro por contribuição tecnológica.",
+      achievements: [
+        {
+          title: "Medalha Exército Brasileiro",
+          description:
+            "Reconhecimento por contribuição tecnológica ao Exército Brasileiro.",
+        },
+        {
+          title: "Google Cloud Computing Foundation",
+          description:
+            "Certificação em fundamentos de computação em nuvem do Google Cloud Platform.",
+        },
+        {
+          title: "Google Cloud Cybersecurity",
+          description:
+            "Certificação em princípios de cybersecurity e práticas de proteção no Google Cloud.",
+        },
+      ],
+    },
+    contact: {
+      email: "thiago@crepequer.dev",
+      location: "Brasília, DF - Brasil",
+      github: "https://github.com/thiagocrepequer",
+      linkedin: "https://linkedin.com/in/thiagocrepequer",
+    },
+  },
+  experiences: [
+    {
+      title: "Desenvolvedor Full-Stack Pleno",
+      company: "NeuroSteps",
+      logo: "/logos/neurosteps.webp",
+      period: "2024 - Presente",
+      description:
+        "Desenvolvo aplicações web e mobile com React, React Native e Java Spring Boot. Sou responsável pela arquitetura de sistemas, mentoria de desenvolvedores júnior e implementação de soluções com inteligência artificial.",
+    },
+    {
+      title: "Desenvolvedor Full-Stack",
+      company: "Exército Brasileiro",
+      logo: "/logos/eb.webp",
+      period: "2024 - 2025",
+      description:
+        "Desenvolvi o aplicativo oficial de uniformes do Exército Brasileiro (RUE - Guía Rápido) em parceria com a SGEx, utilizando tecnologias modernas para atender milhares de usuários.",
+    },
+  ],
+  projectsList: [
+    {
+      title: "RUE - Guia Rápido",
+      description:
+        "Aplicativo oficial de uniformes do Exército Brasileiro, desenvolvido em parceria com a SGEx.",
+      technologies: ["Medalha Exército Brasileiro"],
+      github: "",
+      demo: "https://play.google.com/store/apps/details?id=com.thiagocrepequer.rue",
+    },
+    {
+      title: "My Menu",
+      description:
+        "Plataforma que democratiza o acesso à tecnologia para pequenos e médios restaurantes, oferecendo gestão de pedidos, cálculo de preços e cardápio digital.",
+      technologies: [
+        "React",
+        "React Native",
+        "Spring",
+        "PostgreSQL",
+        "AWS",
+        "Docker",
+      ],
+      github: "https://github.com/my-menu-dotnet",
+      demo: "https://my-menu.net",
+    },
+  ],
+} as const;
