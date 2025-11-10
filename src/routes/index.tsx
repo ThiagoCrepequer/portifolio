@@ -1,4 +1,4 @@
-import Contact from "@/components/Contact";
+import Contact from "@/components/EmailContact";
 import Badge from "@/components/ui/Badge";
 import { Button } from "@/components/ui/button";
 import {
