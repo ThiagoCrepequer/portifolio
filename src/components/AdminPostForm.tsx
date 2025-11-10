@@ -112,6 +112,7 @@ export function AdminPostForm() {
         data: {
           title: formData.title,
           slug: formData.slug,
+          // @ts-ignore
           content: savedData.blocks,
           category: formData.category,
           tags: tagsArray,

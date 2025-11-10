@@ -1,5 +1,3 @@
-"use client";
-
 import { FormEvent, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
