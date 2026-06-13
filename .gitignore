@@ -15,3 +15,7 @@ todos.json
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+.omo
+
+test-results/
