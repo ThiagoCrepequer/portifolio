@@ -9,9 +9,14 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { getPostPaginated, PostPaginationParams } from "@/data/post-paginated";
-import { createFileRoute } from "@tanstack/react-router";
+import { paginate } from "@/lib/pagination";
+import { getT } from "@/lib/i18nServer";
+import { canonicalUrl } from "@/lib/seo";
+import { RouteError } from "@/components/RouteError";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import i18n from "@/i18n/config";
 
 export const Route = createFileRoute("/blog/")({
   component: RouteComponent,
@@ -20,6 +25,34 @@ export const Route = createFileRoute("/blog/")({
     console.log(search);
     return await getPostPaginated({ data: search });
   },
+  head: () => {
+    const locale = i18n.language || "pt";
+    const t = getT(locale);
+    const title = `Blog - Thiago Crepequer`;
+    const description = t("seo.description");
+    const ogTitle = t("seo.ogTitle");
+    const ogDescription = t("seo.ogDescription");
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: `${title} - ${ogTitle}` },
+        { property: "og:description", content: ogDescription },
+        { property: "og:image", content: "/og-image.jpg" },
+        { property: "og:url", content: canonicalUrl("/blog") },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: `${title} - ${ogTitle}` },
+        { name: "twitter:description", content: ogDescription },
+        { name: "twitter:image", content: "/og-image.jpg" },
+      ],
+      links: [
+        { rel: "canonical", href: canonicalUrl("/blog") },
+      ],
+    };
+  },
+  errorComponent: RouteError,
 });
 
 function RouteComponent() {
@@ -51,10 +84,7 @@ function RouteComponent() {
     navigate({
       search: (prev) => ({
         ...prev,
-        page:
-          posts.pagination.currentPage - 1 >= 0
-            ? posts.pagination.currentPage - 1
-            : 0,
+        page: posts.pagination.currentPage - 1 >= 0 ? posts.pagination.currentPage - 1 : 0,
       }),
     });
   };
@@ -72,6 +102,7 @@ function RouteComponent() {
     <section className="py-20">
       <div className="h-16"></div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-foreground mb-8">Blog</h1>
         <div className="mb-6">
           <SearchInput
             onSearchChange={handleSearchChange}
@@ -81,15 +112,15 @@ function RouteComponent() {
         <ul className="flex flex-col gap-6">
           {posts.data.map((post) => (
             <li key={post.id}>
-              <a href={`/blog/${post.slug}`} className="flex flex-col gap-1">
-                <span className="text-2xl font-bold">{post.title}</span>
-                <p className="text-gray-700 line-clamp-3">{post.excerpt}</p>
+              <Link to="/blog/$slug" params={{ slug: post.slug }} className="flex flex-col gap-1">
+                <h2 className="text-2xl font-bold">{post.title}</h2>
+                <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
                 <p>
                   {format(new Date(post.created_at), "dd 'de' MMMM 'de' yyyy", {
                     locale: ptBR,
                   })}
                 </p>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -98,24 +129,26 @@ function RouteComponent() {
             <PaginationItem className="cursor-pointer">
               <PaginationPrevious onClick={previousPage} />
             </PaginationItem>
-            {Array.from({
-              length:
-                posts.pagination.totalPages > 5
-                  ? 5
-                  : posts.pagination.totalPages,
-            }).map((_, index) => (
-              <PaginationItem key={index}>
-                <PaginationLink
-                  className="cursor-pointer"
-                  onClick={() => toPage(index)}
-                >
-                  {index + 1}
-                </PaginationLink>
-              </PaginationItem>
-            ))}
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
+            {paginate(
+              posts.pagination.currentPage + 1,
+              posts.pagination.totalPages,
+            ).map((page, index) =>
+              page === "ellipsis" ? (
+                <PaginationItem key={`ellipsis-${index}`}>
+                  <PaginationEllipsis />
+                </PaginationItem>
+              ) : (
+                <PaginationItem key={page}>
+                  <PaginationLink
+                    className="cursor-pointer"
+                    isActive={page === posts.pagination.currentPage + 1}
+                    onClick={() => toPage(page - 1)}
+                  >
+                    {page}
+                  </PaginationLink>
+                </PaginationItem>
+              ),
+            )}
             <PaginationItem className="cursor-pointer">
               <PaginationNext onClick={nextPage} />
             </PaginationItem>

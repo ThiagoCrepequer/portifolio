@@ -1,0 +1,10 @@
+node_modules
+dist
+.output
+.wrangler
+.tanstack
+.agents
+.omo
+.cta.json
+worker-configuration.d.ts
+routeTree.gen.ts

@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { toast } from "react-toastify";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 import { createPost } from "@/data/post-create";
 import { createReactEditorJS } from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "@/lib/editorTools";
@@ -36,9 +36,7 @@ export function AdminPostForm() {
   };
 
   // Função para extrair o primeiro parágrafo dos blocos
-  const extractFirstParagraph = (
-    blocks: Array<{ type: string; data: object }>
-  ): string => {
+  const extractFirstParagraph = (blocks: Array<{ type: string; data: object }>): string => {
     for (const block of blocks) {
       if (block.type === "paragraph") {
         const data = block.data as { text?: string };
@@ -53,9 +51,7 @@ export function AdminPostForm() {
     return "";
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => {
       const updated = {
@@ -102,9 +98,7 @@ export function AdminPostForm() {
         return;
       }
 
-      const tagsArray = formData.tags
-        ? formData.tags.split(",").map((tag) => tag.trim())
-        : [];
+      const tagsArray = formData.tags ? formData.tags.split(",").map((tag) => tag.trim()) : [];
 
       const excerpt = extractFirstParagraph(savedData.blocks);
 
@@ -112,7 +106,7 @@ export function AdminPostForm() {
         data: {
           title: formData.title,
           slug: formData.slug,
-          // @ts-ignore
+          // @ts-expect-error EditorJS block type mismatch
           content: savedData.blocks,
           category: formData.category,
           tags: tagsArray,
@@ -131,9 +125,7 @@ export function AdminPostForm() {
         await editorCore.current.clear();
       }
     } catch (error) {
-      toast.error(
-        error instanceof Error ? error.message : "Falha ao criar post"
-      );
+      toast.error(error instanceof Error ? error.message : "Falha ao criar post");
     } finally {
       setIsLoading(false);
     }
@@ -154,8 +146,9 @@ export function AdminPostForm() {
       />
 
       <div>
-        <label className="block text-sm font-medium mb-2">Título</label>
+        <label htmlFor="admin-title" className="block text-sm font-medium mb-2">Título</label>
         <Input
+          id="admin-title"
           name="title"
           value={formData.title}
           onChange={handleChange}
@@ -165,8 +158,9 @@ export function AdminPostForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">Slug</label>
+        <label htmlFor="admin-slug" className="block text-sm font-medium mb-2">Slug</label>
         <Input
+          id="admin-slug"
           name="slug"
           value={formData.slug}
           onChange={handleChange}
@@ -177,8 +171,9 @@ export function AdminPostForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">Categoria</label>
+        <label htmlFor="admin-category" className="block text-sm font-medium mb-2">Categoria</label>
         <Input
+          id="admin-category"
           name="category"
           value={formData.category}
           onChange={handleChange}
@@ -188,10 +183,9 @@ export function AdminPostForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-2">
-          Tags (separadas por vírgula)
-        </label>
+        <label htmlFor="admin-tags" className="block text-sm font-medium mb-2">Tags (separadas por vírgula)</label>
         <Input
+          id="admin-tags"
           name="tags"
           value={formData.tags}
           onChange={handleChange}

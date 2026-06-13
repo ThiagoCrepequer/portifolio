@@ -1,22 +1,23 @@
-import { clsx } from "clsx"
-import type { HTMLAttributes, ReactNode } from "react"
+import { cn } from "@/lib/utils";
+import type { HTMLAttributes, ReactNode } from "react";
 
 interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode
-  variant?: "default" | "secondary" | "outline"
+  children: ReactNode;
+  variant?: "default" | "secondary" | "outline";
 }
 
-const Badge = ({ children, variant = "default", className, ...props }: BadgeProps) => {
+export const Badge = ({ children, variant = "default", className, ...props }: BadgeProps) => {
   const variants = {
-    default: "bg-gray-900 text-white",
-    secondary: "bg-gray-100 text-gray-900",
-    outline: "border border-gray-300 bg-transparent",
-  }
+    default: "bg-primary text-primary-foreground hover:bg-primary/90",
+    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    outline:
+      "border border-border bg-transparent text-foreground hover:border-midground",
+  };
 
   return (
     <div
-      className={clsx(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors",
+      className={cn(
+        "inline-flex items-center rounded-sm px-2.5 py-0.5 text-xs font-medium tracking-wide transition-colors",
         variants[variant],
         className,
       )}
@@ -24,7 +25,5 @@ const Badge = ({ children, variant = "default", className, ...props }: BadgeProp
     >
       {children}
     </div>
-  )
-}
-
-export default Badge
+  );
+};

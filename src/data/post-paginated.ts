@@ -38,9 +38,7 @@ export const getPostPaginated = createServerFn()
       return PostPaginationParamsSchema.parse(input);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const messages = error.issues
-          .map((e) => `${e.path.join(".")}: ${e.message}`)
-          .join(", ");
+        const messages = error.issues.map((e) => `${e.path.join(".")}: ${e.message}`).join(", ");
         throw new Error(`Validation error: ${messages}`);
       }
       throw new Error("Invalid input");
@@ -88,7 +86,7 @@ export const getPostPaginated = createServerFn()
         ORDER BY ${sortBy} ${order} 
         LIMIT ? OFFSET ?
       `;
-      
+
       const { results } = await env.posts_database
         .prepare(finalQuery)
         .bind(...queryParams, pageSize, offset)

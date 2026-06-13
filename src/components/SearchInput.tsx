@@ -26,9 +26,7 @@ export const SearchInput = ({ onSearchChange, rightAddon }: SearchInputProps) =>
       <InputGroupAddon>
         <IoSearch size={20} />
       </InputGroupAddon>
-      <InputGroupAddon align="inline-end">
-        {rightAddon}
-      </InputGroupAddon>
+      <InputGroupAddon align="inline-end">{rightAddon}</InputGroupAddon>
     </InputGroup>
   );
 };

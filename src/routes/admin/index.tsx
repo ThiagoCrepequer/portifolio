@@ -1,4 +1,5 @@
 import { AdminPostForm } from "@/components/AdminPostForm";
+import { canonicalUrl } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/admin/")({
@@ -9,6 +10,15 @@ export const Route = createFileRoute("/admin/")({
     }
   },
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      { title: "Admin - Thiago Crepequer" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+    links: [
+      { rel: "canonical", href: canonicalUrl("/admin") },
+    ],
+  }),
 });
 
 function RouteComponent() {

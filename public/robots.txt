@@ -1,43 +1,4 @@
 User-agent: *
-Allow: /
-Crawl-delay: 1
+Disallow:
 
-# Sitemap
 Sitemap: https://crepequer.dev/sitemap.xml
-
-# Disallow access to admin and private areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: *.log
-
-# Allow all common crawlers with specific settings
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Host specification
-Host: https://crepequer.dev

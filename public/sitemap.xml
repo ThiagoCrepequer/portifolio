@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://crepequer.dev/</loc>
@@ -32,33 +32,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://crepequer.dev/" />
   </url>
   <url>
-    <loc>https://crepequer.dev/#about</loc>
-    <lastmod>2025-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crepequer.dev/#experience</loc>
-    <lastmod>2025-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crepequer.dev/#projects</loc>
+    <loc>https://crepequer.dev/blog</loc>
     <lastmod>2025-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://crepequer.dev/#technologies</loc>
-    <lastmod>2025-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://crepequer.dev/#contact</loc>
-    <lastmod>2025-07-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!--
+    Add individual blog post entries here as they are published.
+    Example:
+    <url>
+      <loc>https://crepequer.dev/blog/my-post-slug</loc>
+      <lastmod>2025-07-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  -->
 </urlset>

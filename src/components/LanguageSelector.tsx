@@ -13,8 +13,7 @@ export const LanguageSelector = () => {
     { code: "es", name: "Español", flagUrl: "/icons/spain.svg" },
   ];
 
-  const currentLanguage =
-    languages.find((lang) => lang.code === i18n.language) || languages[0];
+  const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
 
   const changeLanguage = (langCode: string) => {
     i18n.changeLanguage(langCode);
@@ -25,34 +24,28 @@ export const LanguageSelector = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
+        className="flex items-center space-x-2 px-3 py-1.5 font-mono text-xs tracking-wider uppercase border border-border text-muted-foreground hover:text-foreground hover:border-midground transition-colors"
         aria-label="Select language"
       >
-        <img
-          src={currentLanguage.flagUrl}
-          alt={currentLanguage.name}
-          className="h-4 w-4"
-        />
-        <span className="text-sm font-medium">{currentLanguage.name}</span>
+        <img src={currentLanguage.flagUrl} alt={currentLanguage.name} width={16} height={16} loading="lazy" decoding="async" className="h-4 w-4" />
+        <span>{currentLanguage.name}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+        <div className="absolute top-full right-0 mt-2 w-48 bg-background border border-border z-50 shadow-lg">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors ${
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-[rgba(255,172,2,0.08)] transition-colors ${
                 i18n.language === lang.code
-                  ? "bg-blue-50 text-blue-600"
-                  : "text-gray-700"
+                  ? "bg-[rgba(255,172,2,0.12)] text-midground"
+                  : "text-foreground"
               }`}
             >
-              <img src={lang.flagUrl} alt={lang.name} className="h-4 w-4" />
-              <span className="font-medium">{lang.name}</span>
-              {i18n.language === lang.code && (
-                <span className="ml-auto text-blue-600">✓</span>
-              )}
+              <img src={lang.flagUrl} alt={lang.name} width={16} height={16} loading="lazy" decoding="async" className="h-4 w-4" />
+              <span className="font-mono text-xs tracking-wider uppercase">{lang.name}</span>
+              {i18n.language === lang.code && <span className="ml-auto text-midground">✓</span>}
             </button>
           ))}
         </div>

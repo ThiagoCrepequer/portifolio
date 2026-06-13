@@ -3,40 +3,24 @@ import { createServerFn } from "@tanstack/react-start";
 export const getTecnologies = createServerFn().handler(() => {
   return {
     main: [
-      { name: "Spring", iconUrl: "/icons/spring.svg", category: "Backend" },
-      { name: "React", iconUrl: "/icons/react.svg", category: "Frontend" },
-      {
-        name: "PostgreSQL",
-        iconUrl: "/icons/postgresql.svg",
-        category: "Database",
-      },
-      { name: "Google Cloud", iconUrl: "/icons/gcp.svg", category: "Cloud" },
+      { name: "Spring", iconKey: "spring", category: "Backend" },
+      { name: "React", iconKey: "react", category: "Frontend" },
+      { name: "PostgreSQL", iconKey: "postgresql", category: "Database" },
+      { name: "Google Cloud", iconKey: "gcp", category: "Cloud" },
     ],
     secondary: [
-      { name: "Java", iconUrl: "/icons/java.svg", category: "Backend" },
-      { name: "Node.js", iconUrl: "/icons/nodejs.svg", category: "Backend" },
-      {
-        name: "TypeScript",
-        iconUrl: "/icons/typescript.svg",
-        category: "Language",
-      },
-      {
-        name: "JavaScript",
-        iconUrl: "/icons/javascript.svg",
-        category: "Language",
-      },
-      { name: "Docker", iconUrl: "/icons/docker.svg", category: "DevOps" },
-      { name: "Git", iconUrl: "/icons/git.svg", category: "Tools" },
-      { name: "Linux", iconUrl: "/icons/linux.svg", category: "OS" },
-      { name: "AWS", iconUrl: "/icons/aws.svg", category: "Cloud" },
-      {
-        name: "Cloudflare",
-        iconUrl: "/icons/cloudflare.svg",
-        category: "Cloud",
-      },
-      { name: "React Native", iconUrl: "/icons/react.svg", category: "Mobile" },
-      { name: "Gemini API", iconUrl: "/icons/gemini.svg", category: "AI" },
-      { name: "OpenAI API", iconUrl: "/icons/openai.svg", category: "AI" },
+      { name: "Java", iconKey: "java", category: "Backend" },
+      { name: "Node.js", iconKey: "nodejs", category: "Backend" },
+      { name: "TypeScript", iconKey: "typescript", category: "Language" },
+      { name: "JavaScript", iconKey: "javascript", category: "Language" },
+      { name: "Docker", iconKey: "docker", category: "DevOps" },
+      { name: "Git", iconKey: "git", category: "Tools" },
+      { name: "Linux", iconKey: "linux", category: "OS" },
+      { name: "AWS", iconKey: "aws", category: "Cloud" },
+      { name: "Cloudflare", iconKey: "cloudflare", category: "Cloud" },
+      { name: "React Native", iconKey: "reactnative", category: "Mobile" },
+      { name: "Gemini API", iconKey: "gemini", category: "AI" },
+      { name: "OpenAI API", iconKey: "openai", category: "AI" },
     ],
   };
 });

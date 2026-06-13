@@ -72,8 +72,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 Após isso o formulário de contato em `src/components/Contact.tsx` enviará as mensagens usando EmailJS.
 
-
-##  Contato
+## Contato
 
 - **Website**: [crepequer.dev](https://crepequer.dev)
 - **Email**: thiago@crepequer.dev

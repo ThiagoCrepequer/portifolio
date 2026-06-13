@@ -3,18 +3,127 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html,
 body {
   @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family:
+    "Space Grotesk",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle Hermes-style scanline overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.08) 2px,
+    rgba(255, 255, 255, 0.08) 3px
+  );
+}
+
+.font-mono {
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Hermes-inspired dither / scanline accents */
+.dither {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    currentColor 2px,
+    currentColor 3px
+  );
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Fade in up animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 172, 2, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 172, 2, 0.04) 1px, transparent 1px);
+}
+
+/* Harmonize colorful SVG icons with Hermes palette */
+.icon-hermes {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(74%) saturate(902%) hue-rotate(359deg)
+    brightness(103%) contrast(101%);
+  opacity: 0.92;
+}
+
+.icon-hermes-bright {
+  filter: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(800%) hue-rotate(350deg)
+    brightness(105%) contrast(100%);
+  opacity: 0.95;
+}
+
+.icon-hermes-muted {
+  filter: brightness(0) saturate(100%) invert(100%);
+  opacity: 0.7;
+}
+
+/* Smooth icon hover */
+.icon-hover {
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.icon-hover:hover {
+  filter: brightness(0) saturate(100%) invert(78%) sepia(89%) saturate(600%) hue-rotate(2deg)
+    brightness(110%) contrast(101%);
+  opacity: 1;
 }
 
 @theme inline {
@@ -53,75 +162,80 @@ code {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-midground: var(--midground);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.028 261.692);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.028 261.692);
-  --primary: oklch(0.21 0.034 264.665);
-  --primary-foreground: oklch(0.985 0.002 247.839);
-  --secondary: oklch(0.967 0.003 264.542);
-  --secondary-foreground: oklch(0.21 0.034 264.665);
-  --muted: oklch(0.967 0.003 264.542);
-  --muted-foreground: oklch(0.551 0.027 264.364);
-  --accent: oklch(0.967 0.003 264.542);
-  --accent-foreground: oklch(0.21 0.034 264.665);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.928 0.006 264.531);
-  --input: oklch(0.928 0.006 264.531);
-  --ring: oklch(0.707 0.022 261.325);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.002 247.839);
-  --sidebar-foreground: oklch(0.13 0.028 261.692);
-  --sidebar-primary: oklch(0.21 0.034 264.665);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.967 0.003 264.542);
-  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
-  --sidebar-border: oklch(0.928 0.006 264.531);
-  --sidebar-ring: oklch(0.707 0.022 261.325);
+  --radius: 0.25rem;
+
+  /* Hermes Agent inspired palette — dark by default */
+  --background: #170d02;
+  --foreground: #ffffff;
+  --card: #170d02;
+  --card-foreground: #ffffff;
+  --popover: #170d02;
+  --popover-foreground: #ffffff;
+  --primary: #ffac02;
+  --primary-foreground: #170d02;
+  --secondary: rgba(255, 255, 255, 0.08);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: rgba(255, 255, 255, 0.55);
+  --accent: #edff45;
+  --accent-foreground: #170d02;
+  --destructive: #fb2c36;
+  --border: rgba(255, 172, 2, 0.18);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: rgba(255, 172, 2, 0.4);
+  --midground: #ffac02;
+  --chart-1: #ffac02;
+  --chart-2: #edff45;
+  --chart-3: #ff2702;
+  --chart-4: #ffffff;
+  --chart-5: #0000f2;
+  --sidebar: #170d02;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffac02;
+  --sidebar-primary-foreground: #170d02;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 172, 2, 0.18);
+  --sidebar-ring: rgba(255, 172, 2, 0.4);
 }
 
 .dark {
-  --background: oklch(0.13 0.028 261.692);
-  --foreground: oklch(0.985 0.002 247.839);
-  --card: oklch(0.21 0.034 264.665);
-  --card-foreground: oklch(0.985 0.002 247.839);
-  --popover: oklch(0.21 0.034 264.665);
-  --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(0.928 0.006 264.531);
-  --primary-foreground: oklch(0.21 0.034 264.665);
-  --secondary: oklch(0.278 0.033 256.848);
-  --secondary-foreground: oklch(0.985 0.002 247.839);
-  --muted: oklch(0.278 0.033 256.848);
-  --muted-foreground: oklch(0.707 0.022 261.325);
-  --accent: oklch(0.278 0.033 256.848);
-  --accent-foreground: oklch(0.985 0.002 247.839);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.034 264.665);
-  --sidebar-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.278 0.033 256.848);
-  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: #170d02;
+  --foreground: #ffffff;
+  --card: #170d02;
+  --card-foreground: #ffffff;
+  --popover: #170d02;
+  --popover-foreground: #ffffff;
+  --primary: #ffac02;
+  --primary-foreground: #170d02;
+  --secondary: rgba(255, 255, 255, 0.08);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: rgba(255, 255, 255, 0.55);
+  --accent: #edff45;
+  --accent-foreground: #170d02;
+  --destructive: #fb2c36;
+  --border: rgba(255, 172, 2, 0.18);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: rgba(255, 172, 2, 0.4);
+  --midground: #ffac02;
+  --chart-1: #ffac02;
+  --chart-2: #edff45;
+  --chart-3: #ff2702;
+  --chart-4: #ffffff;
+  --chart-5: #0000f2;
+  --sidebar: #170d02;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffac02;
+  --sidebar-primary-foreground: #170d02;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 172, 2, 0.18);
+  --sidebar-ring: rgba(255, 172, 2, 0.4);
 }
 
 @layer base {
@@ -141,21 +255,21 @@ code {
   max-width: inherit;
 }
 
-h1.ce-header{
-  @apply text-3xl font-bold
+h1.ce-header {
+  @apply text-3xl font-bold;
 }
-h2.ce-header{
-  @apply text-2xl font-semibold
+h2.ce-header {
+  @apply text-2xl font-semibold;
 }
-h3.ce-header{
-  @apply text-xl font-semibold
+h3.ce-header {
+  @apply text-xl font-semibold;
 }
-h4.ce-header{
-  @apply text-lg font-semibold
+h4.ce-header {
+  @apply text-lg font-semibold;
 }
-h5.ce-header{
-  @apply text-base font-semibold
+h5.ce-header {
+  @apply text-base font-semibold;
 }
-h6.ce-header{
-  @apply text-base font-semibold
+h6.ce-header {
+  @apply text-base font-semibold;
 }

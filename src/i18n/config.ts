@@ -9,16 +9,23 @@ import { en as NotFoundEn } from "./locales/notFound/en";
 import { es as NotFoundEs } from "./locales/notFound/es";
 import { pt as NotFoundPt } from "./locales/notFound/pt";
 
+import { en as BlogEn } from "./locales/blog/en";
+import { es as BlogEs } from "./locales/blog/es";
+import { pt as BlogPt } from "./locales/blog/pt";
+
 export const defaultNS = "translation";
 export const resources = {
   en: {
     translation: { ...HomeEn, ...NotFoundEn },
+    blog: BlogEn,
   },
   es: {
     translation: { ...HomeEs, ...NotFoundEs },
+    blog: BlogEs,
   },
   pt: {
     translation: { ...HomePt, ...NotFoundPt },
+    blog: BlogPt,
   },
 } as const;
 
@@ -36,7 +43,7 @@ i18next.use(LanguageDetector).init({
       return "en";
     },
   },
-  ns: ["translation"],
+  ns: ["translation", "blog"],
   defaultNS,
   resources,
   interpolation: {

@@ -20,15 +20,13 @@ export type CreatePostInput = z.infer<typeof CreatePostSchema>;
 /**
  * Cria um novo post (apenas funciona localmente)
  */
-export const createPost = createServerFn({ method: 'POST' })
+export const createPost = createServerFn({ method: "POST" })
   .inputValidator((input: CreatePostInput) => {
     try {
       return CreatePostSchema.parse(input);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const messages = error.issues
-          .map((e) => `${e.path.join(".")}: ${e.message}`)
-          .join(", ");
+        const messages = error.issues.map((e) => `${e.path.join(".")}: ${e.message}`).join(", ");
         throw new Error(`Validation error: ${messages}`);
       }
       throw new Error("Invalid input");
@@ -37,7 +35,7 @@ export const createPost = createServerFn({ method: 'POST' })
   .handler(async ({ data }) => {
     // Verificar se está em ambiente de desenvolvimento local
     const isDev = import.meta.env.DEV;
-    
+
     if (!isDev) {
       throw new Error("Post creation is only available in development mode");
     }
@@ -50,7 +48,7 @@ export const createPost = createServerFn({ method: 'POST' })
       const result = await env.posts_database
         .prepare(
           `INSERT INTO post (title, slug, content, category, tags, excerpt, created_at, updated_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
         )
         .bind(title, slug, content, category, JSON.stringify(tags), excerpt, now, now)
         .run();
