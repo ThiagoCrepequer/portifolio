@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resources } from "@/i18n/config";
+import { resources, convertDetectedLanguage } from "@/i18n/config";
 
 type NestedObject = Record<string, unknown>;
 
@@ -94,5 +94,33 @@ describe("i18n SEO keys", () => {
         }
       });
     }
+  });
+});
+
+describe("convertDetectedLanguage", () => {
+  it("returns the input when it is a supported base locale", () => {
+    expect(convertDetectedLanguage("pt")).toBe("pt");
+    expect(convertDetectedLanguage("en")).toBe("en");
+    expect(convertDetectedLanguage("es")).toBe("es");
+  });
+
+  it("resolves regional variants to their base locale (pt-BR -> pt)", () => {
+    expect(convertDetectedLanguage("pt-BR")).toBe("pt");
+    expect(convertDetectedLanguage("pt-PT")).toBe("pt");
+    expect(convertDetectedLanguage("en-US")).toBe("en");
+    expect(convertDetectedLanguage("en-GB")).toBe("en");
+    expect(convertDetectedLanguage("es-MX")).toBe("es");
+    expect(convertDetectedLanguage("es-AR")).toBe("es");
+  });
+
+  it("is case-insensitive", () => {
+    expect(convertDetectedLanguage("PT-br")).toBe("pt");
+    expect(convertDetectedLanguage("EN-us")).toBe("en");
+  });
+
+  it("falls back to 'pt' for unknown language codes", () => {
+    expect(convertDetectedLanguage("ja")).toBe("pt");
+    expect(convertDetectedLanguage("xx")).toBe("pt");
+    expect(convertDetectedLanguage("")).toBe("pt");
   });
 });

@@ -29,19 +29,27 @@ export const resources = {
   },
 } as const;
 
+/**
+ * Maps a detected language (possibly a regional variant like "pt-BR" or "en-US")
+ * to one of the supported base locales. Falls back to "pt" to match `fallbackLng`.
+ */
+export function convertDetectedLanguage(lng: string): string {
+  const supported = ["en", "es", "pt"];
+  if (supported.includes(lng)) return lng;
+  const lower = lng.toLowerCase();
+  if (lower.startsWith("pt")) return "pt";
+  if (lower.startsWith("en")) return "en";
+  if (lower.startsWith("es")) return "es";
+  return "pt";
+}
+
 i18next.use(LanguageDetector).init({
   fallbackLng: "pt",
   lng: "pt",
   detection: {
     order: ["querystring", "cookie", "localStorage", "navigator"],
     caches: ["localStorage"],
-    convertDetectedLanguage: (lng: string) => {
-      const supportedLanguages = ["en", "es", "pt"];
-      if (supportedLanguages.includes(lng)) {
-        return lng;
-      }
-      return "en";
-    },
+    convertDetectedLanguage,
   },
   ns: ["translation", "blog"],
   defaultNS,

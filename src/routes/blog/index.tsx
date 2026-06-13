@@ -8,10 +8,13 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { getPostPaginated, PostPaginationParams } from "@/data/post-paginated";
+import { getPostPaginated } from "@/data/post-paginated";
+import type { PostPaginationParams } from "@/data/post-paginated";
+import { PostPaginationParamsSchema } from "@/data/posts/schemas";
+import { usePostSearch } from "@/hooks/usePostSearch";
 import { paginate } from "@/lib/pagination";
 import { getT } from "@/lib/i18nServer";
-import { canonicalUrl } from "@/lib/seo";
+import { ROUTES } from "@/lib/routes";
 import { RouteError } from "@/components/RouteError";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { format } from "date-fns";
@@ -20,10 +23,10 @@ import i18n from "@/i18n/config";
 
 export const Route = createFileRoute("/blog/")({
   component: RouteComponent,
+  validateSearch: PostPaginationParamsSchema,
   loader: async ({ location }) => {
     const search = location.search as PostPaginationParams;
-    console.log(search);
-    return await getPostPaginated({ data: search });
+    return getPostPaginated({ data: search });
   },
   head: () => {
     const locale = i18n.language || "pt";
@@ -32,6 +35,7 @@ export const Route = createFileRoute("/blog/")({
     const description = t("seo.description");
     const ogTitle = t("seo.ogTitle");
     const ogDescription = t("seo.ogDescription");
+    const canonical = ROUTES.canonical(ROUTES.blog);
 
     return {
       meta: [
@@ -41,14 +45,14 @@ export const Route = createFileRoute("/blog/")({
         { property: "og:title", content: `${title} - ${ogTitle}` },
         { property: "og:description", content: ogDescription },
         { property: "og:image", content: "/og-image.jpg" },
-        { property: "og:url", content: canonicalUrl("/blog") },
+        { property: "og:url", content: canonical },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: `${title} - ${ogTitle}` },
         { name: "twitter:description", content: ogDescription },
         { name: "twitter:image", content: "/og-image.jpg" },
       ],
       links: [
-        { rel: "canonical", href: canonicalUrl("/blog") },
+        { rel: "canonical", href: canonical },
       ],
     };
   },
@@ -58,45 +62,12 @@ export const Route = createFileRoute("/blog/")({
 function RouteComponent() {
   const posts = Route.useLoaderData();
   const navigate = Route.useNavigate();
-
-  const handleSearchChange = (input: string) => {
-    navigate({
-      search: (prev) => ({
-        ...prev,
-        search: input || undefined,
-      }),
-    });
-  };
-
-  const nextPage = () => {
-    navigate({
-      search: (prev) => ({
-        ...prev,
-        page:
-          posts.pagination.currentPage + 1 < posts.pagination.totalPages
-            ? posts.pagination.currentPage + 1
-            : posts.pagination.currentPage,
-      }),
-    });
-  };
-
-  const previousPage = () => {
-    navigate({
-      search: (prev) => ({
-        ...prev,
-        page: posts.pagination.currentPage - 1 >= 0 ? posts.pagination.currentPage - 1 : 0,
-      }),
-    });
-  };
-
-  const toPage = (page: number) => {
-    navigate({
-      search: (prev) => ({
-        ...prev,
-        page,
-      }),
-    });
-  };
+  const search = Route.useSearch();
+  const { goToPage, next, prev, setSearch } = usePostSearch({
+    data: posts,
+    navigate,
+    currentSearch: search,
+  });
 
   return (
     <section className="py-20">
@@ -105,7 +76,7 @@ function RouteComponent() {
         <h1 className="text-3xl font-bold text-foreground mb-8">Blog</h1>
         <div className="mb-6">
           <SearchInput
-            onSearchChange={handleSearchChange}
+            onSearchChange={setSearch}
             rightAddon={`${posts.pagination.totalItems} posts`}
           />
         </div>
@@ -127,7 +98,7 @@ function RouteComponent() {
         <Pagination>
           <PaginationContent>
             <PaginationItem className="cursor-pointer">
-              <PaginationPrevious onClick={previousPage} />
+              <PaginationPrevious onClick={prev} />
             </PaginationItem>
             {paginate(
               posts.pagination.currentPage + 1,
@@ -142,7 +113,7 @@ function RouteComponent() {
                   <PaginationLink
                     className="cursor-pointer"
                     isActive={page === posts.pagination.currentPage + 1}
-                    onClick={() => toPage(page - 1)}
+                    onClick={() => goToPage(page - 1)}
                   >
                     {page}
                   </PaginationLink>
@@ -150,7 +121,7 @@ function RouteComponent() {
               ),
             )}
             <PaginationItem className="cursor-pointer">
-              <PaginationNext onClick={nextPage} />
+              <PaginationNext onClick={next} />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

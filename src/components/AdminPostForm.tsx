@@ -1,142 +1,121 @@
-import { useState, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { createReactEditorJS } from "react-editor-js";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { createPost } from "@/data/post-create";
-import { createReactEditorJS } from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "@/lib/editorTools";
+import { type CreatePostInput, type InsertResult } from "@/data/posts/schemas";
+import { slugify } from "@/lib/slugify";
+import { extractExcerpt } from "@/lib/editorJs";
+import { renderBlocksToHtml } from "@/lib/editorJsServer";
 
 const ReactEditorJS = createReactEditorJS();
 
+type EditorBlock = { type: string; data: Record<string, unknown> };
 interface EditorCore {
-  save(): Promise<{ blocks: Array<{ type: string; data: object }> }>;
+  save(): Promise<{ blocks: EditorBlock[] }>;
   clear(): Promise<void>;
 }
 
+/** Form values for react-hook-form. `tags` is a comma-separated string in the UI,
+ *  split into `string[]` on submit. */
+type FormValues = {
+  title: string;
+  slug: string;
+  category: string;
+  tags: string;
+};
+
+const splitTags = (raw: string | undefined): string[] => {
+  if (!raw) return [];
+  return raw
+    .split(",")
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0);
+};
+
 export function AdminPostForm() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    title: "",
-    slug: "",
-    category: "general",
-    tags: "",
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    setError,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    defaultValues: { title: "", slug: "", category: "general", tags: "" },
   });
-  const editorCore = useRef<EditorCore | null>(null);
 
-  // Função para converter texto em slug URL-safe
-  const generateSlug = (text: string): string => {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "") // Remove acentos
-      .replace(/[^\w\s-]/g, "") // Remove caracteres especiais
-      .trim()
-      .replace(/\s+/g, "-") // Substitui espaços por hífens
-      .replace(/-+/g, "-"); // Remove múltiplos hífens
-  };
+  const title = watch("title") ?? "";
+  const editorRef = useRef<EditorCore | null>(null);
 
-  // Função para extrair o primeiro parágrafo dos blocos
-  const extractFirstParagraph = (blocks: Array<{ type: string; data: object }>): string => {
-    for (const block of blocks) {
-      if (block.type === "paragraph") {
-        const data = block.data as { text?: string };
-        if (data.text) {
-          // Remove tags HTML e limita a 160 caracteres
-          return data.text
-            .replace(/<[^>]*>/g, "") // Remove tags HTML
-            .trim();
-        }
-      }
+  // Auto-generate the slug whenever the title changes.
+  useEffect(() => {
+    setValue("slug", slugify(title), { shouldValidate: false, shouldDirty: true });
+  }, [title, setValue]);
+
+  const onSubmit = handleSubmit(async (values) => {
+    if (!editorRef.current) {
+      toast.error("Editor não foi inicializado");
+      return;
     }
-    return "";
-  };
+    const saved = await editorRef.current.save();
+    const blocks: EditorBlock[] = Array.isArray(saved?.blocks) ? saved.blocks : [];
+    if (blocks.length === 0) {
+      toast.error("Conteúdo é obrigatório");
+      return;
+    }
+    const tags = splitTags(values.tags);
+    const excerpt = extractExcerpt(blocks, 160);
+    const content_html = renderBlocksToHtml(blocks);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => {
-      const updated = {
-        ...prev,
-        [name]: value,
-      };
-      // Se o título foi alterado, atualiza o slug automaticamente
-      if (name === "title") {
-        updated.slug = generateSlug(value);
-      }
-      return updated;
-    });
-  };
+    const payload: CreatePostInput = {
+      title: values.title,
+      slug: values.slug,
+      content: blocks,
+      content_html,
+      excerpt,
+      category: values.category || "general",
+      tags,
+      status: "draft",
+    };
 
-  const handleInitialize = (editor: EditorCore) => {
-    editorCore.current = editor;
-  };
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
+    let result: InsertResult;
     try {
-      if (!formData.title.trim()) {
-        toast.error("Título é obrigatório");
-        setIsLoading(false);
-        return;
-      }
-      if (!formData.slug.trim()) {
-        toast.error("Slug é obrigatório");
-        setIsLoading(false);
-        return;
-      }
-      if (!editorCore.current) {
-        toast.error("Editor não foi inicializado");
-        setIsLoading(false);
-        return;
-      }
-
-      const savedData = await editorCore.current.save();
-      if (!savedData.blocks || savedData.blocks.length === 0) {
-        toast.error("Conteúdo é obrigatório");
-        setIsLoading(false);
-        return;
-      }
-
-      const tagsArray = formData.tags ? formData.tags.split(",").map((tag) => tag.trim()) : [];
-
-      const excerpt = extractFirstParagraph(savedData.blocks);
-
-      await createPost({
-        data: {
-          title: formData.title,
-          slug: formData.slug,
-          // @ts-expect-error EditorJS block type mismatch
-          content: savedData.blocks,
-          category: formData.category,
-          tags: tagsArray,
-          excerpt,
-        },
-      });
-
-      toast.success("Post criado com sucesso!");
-      setFormData({
-        title: "",
-        slug: "",
-        category: "general",
-        tags: "",
-      });
-      if (editorCore.current) {
-        await editorCore.current.clear();
-      }
-    } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Falha ao criar post");
-    } finally {
-      setIsLoading(false);
+      result = await createPost({ data: payload });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Falha ao criar post");
+      return;
     }
-  };
+
+    if (!result.success) {
+      if (result.code === "SLUG_COLLISION") {
+        setError("slug", { type: "server", message: result.message });
+        toast.error(result.message);
+        return;
+      }
+      toast.error(result.message);
+      return;
+    }
+
+    toast.success("Post criado com sucesso!");
+    if (editorRef.current) {
+      await editorRef.current.clear();
+    }
+    reset({ title: "", slug: "", category: "general", tags: "" });
+  });
 
   return (
     <form onSubmit={onSubmit} className="space-y-6 max-w-4xl">
       <ReactEditorJS
         placeholder="Escreva o conteúdo do post aqui..."
-        holder="asd"
-        onInitialize={handleInitialize}
+        holder="admin-editor"
+        onInitialize={(editor: EditorCore) => {
+          editorRef.current = editor;
+        }}
         tools={EDITOR_JS_TOOLS}
         defaultValue={{
           time: Date.now(),
@@ -146,56 +125,58 @@ export function AdminPostForm() {
       />
 
       <div>
-        <label htmlFor="admin-title" className="block text-sm font-medium mb-2">Título</label>
+        <label htmlFor="admin-title" className="block text-sm font-medium mb-2">
+          Título
+        </label>
         <Input
           id="admin-title"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
+          {...register("title")}
+          disabled={isSubmitting}
           placeholder="Título do post"
-          disabled={isLoading}
         />
+        {errors.title && <p role="alert" className="text-sm text-destructive mt-1">{errors.title.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="admin-slug" className="block text-sm font-medium mb-2">Slug</label>
+        <label htmlFor="admin-slug" className="block text-sm font-medium mb-2">
+          Slug
+        </label>
         <Input
           id="admin-slug"
-          name="slug"
-          value={formData.slug}
-          onChange={handleChange}
+          {...register("slug")}
+          disabled={isSubmitting}
           placeholder="url-do-post"
-          disabled={isLoading}
           title="Gerado automaticamente a partir do título"
         />
+        {errors.slug && <p role="alert" className="text-sm text-destructive mt-1">{errors.slug.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="admin-category" className="block text-sm font-medium mb-2">Categoria</label>
+        <label htmlFor="admin-category" className="block text-sm font-medium mb-2">
+          Categoria
+        </label>
         <Input
           id="admin-category"
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
+          {...register("category")}
+          disabled={isSubmitting}
           placeholder="general"
-          disabled={isLoading}
         />
       </div>
 
       <div>
-        <label htmlFor="admin-tags" className="block text-sm font-medium mb-2">Tags (separadas por vírgula)</label>
+        <label htmlFor="admin-tags" className="block text-sm font-medium mb-2">
+          Tags (separadas por vírgula)
+        </label>
         <Input
           id="admin-tags"
-          name="tags"
-          value={formData.tags}
-          onChange={handleChange}
+          {...register("tags")}
+          disabled={isSubmitting}
           placeholder="tag1, tag2, tag3"
-          disabled={isLoading}
         />
       </div>
 
-      <Button type="submit" disabled={isLoading}>
-        {isLoading ? "Criando..." : "Criar Post"}
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Criando..." : "Criar Post"}
       </Button>
     </form>
   );

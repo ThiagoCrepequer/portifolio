@@ -7,17 +7,37 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { getPostFromSlug } from "@/data/post";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { EDITOR_JS_TOOLS } from "@/lib/editorTools";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { extractExcerpt } from "@/lib/editorJs";
+import { renderBlocksToHtml } from "@/lib/editorJsServer";
 import { getT } from "@/lib/i18nServer";
+import { ROUTES } from "@/lib/routes";
 import i18n from "@/i18n/config";
-import EditorJS from "@editorjs/editorjs";
-import { useEffect, useRef } from "react";
+
+/** Render the post body. Use `content_html` when present (new rows), else
+ *  fall back to rendering the parsed EditorJS JSON via `renderBlocksToHtml`. */
+function renderPostBody(contentHtml: string | null, contentJson: unknown): string {
+  if (contentHtml && contentHtml.length > 0) return contentHtml;
+  // Legacy fallback: parse content and re-render
+  try {
+    const parsed = typeof contentJson === "string" ? JSON.parse(contentJson) : contentJson;
+    const blocks =
+      parsed && typeof parsed === "object" && Array.isArray((parsed as { blocks?: unknown }).blocks)
+        ? (parsed as { blocks: Parameters<typeof renderBlocksToHtml>[0] }).blocks
+        : [];
+    return renderBlocksToHtml(blocks);
+  } catch {
+    return "";
+  }
+}
 
 export const Route = createFileRoute("/blog/$slug")({
   component: RouteComponent,
-  loader: async ({ params }) => await getPostFromSlug({ data: params.slug }),
+  loader: async ({ params }) => {
+    const post = await getPostFromSlug({ data: params.slug });
+    if (!post) throw notFound();
+    return post;
+  },
   head: ({ loaderData }) => {
     const post = loaderData;
     const locale = i18n.language || "pt";
@@ -30,7 +50,9 @@ export const Route = createFileRoute("/blog/$slug")({
 
     const title = `${post?.title || "Blog"} - Thiago Crepquer`;
     const excerpt = extractExcerpt(post?.content, 160);
-    const canonicalUrl = `https://crepequer.dev/blog/${post?.slug || ""}`;
+    const canonicalUrl = post
+      ? ROUTES.canonical(ROUTES.blogPost(post.slug))
+      : ROUTES.canonical("/blog");
     const image = "/og-image.jpg";
     const authorName = tBlog("article.author");
     const section = post?.category || tBlog("article.section");
@@ -86,36 +108,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function RouteComponent() {
   const post = Route.useLoaderData();
-  const editorRef = useRef<EditorJS | null>(null);
-  const holderRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Evita inicializar múltiplas vezes
-    if (editorRef.current) {
-      return;
-    }
-
-    // Inicializa o EditorJS
-    editorRef.current = new EditorJS({
-      holder: holderRef.current as HTMLElement,
-      readOnly: true,
-      tools: EDITOR_JS_TOOLS,
-      data: {
-        time: Date.now(),
-        blocks: JSON.parse(post?.content || "[]"),
-        version: "2.26.5",
-      },
-      minHeight: 0,
-    });
-
-    // Cleanup: destroi a instância quando o componente desmontar
-    return () => {
-      if (editorRef.current && editorRef.current.destroy) {
-        editorRef.current.destroy();
-        editorRef.current = null;
-      }
-    };
-  }, [post?.content]);
+  const bodyHtml = renderPostBody(post.content_html, post.content);
 
   return (
     <section className="py-20">
@@ -136,8 +129,10 @@ function RouteComponent() {
         </Breadcrumb>
         <div className="mt-6">
           <h1 className="text-4xl font-bold mb-4">{post?.title}</h1>
-
-          <div ref={holderRef} id="editorjs" />
+          <article
+            className="prose dark:prose-invert max-w-none"
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
+          />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { FormEvent, useState, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/hooks/useTranslation";
 import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/Card";
 import { SectionHeader } from "./hermes/SectionHeader";

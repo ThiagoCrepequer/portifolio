@@ -203,3 +203,28 @@ describe("public/sitemap.xml", () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// 5. Server-rendered /sitemap.xml route (W4.2)
+// ---------------------------------------------------------------------------
+describe("server-rendered /sitemap.xml route", () => {
+  const routePath = resolve(PROJECT_ROOT, "src/routes/sitemap[.]xml.ts");
+
+  it("the route file exists", () => {
+    expect(existsSync(routePath)).toBe(true);
+  });
+
+  it("exports a TanStack Start file-route", async () => {
+    const mod = await import("@/routes/sitemap[.]xml");
+    expect(mod.Route).toBeDefined();
+    expect(typeof mod.Route).toBe("object");
+  });
+
+  it("has a GET server handler that returns XML", async () => {
+    const mod = (await import("@/routes/sitemap[.]xml")) as {
+      Route: { options?: { server?: { handlers?: { GET?: unknown } } } };
+    };
+    const getHandler = mod.Route?.options?.server?.handlers?.GET;
+    expect(getHandler).toBeTypeOf("function");
+  });
+});
