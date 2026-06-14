@@ -38,8 +38,9 @@ const SLUG_COLLISION_FRAGMENT = "UNIQUE constraint failed: post.slug";
  * Extract EditorJS blocks from a CreatePostInput's `content` field.
  *
  * `CreatePostInput.content` is typed as `unknown` because it can be either:
- *  - the raw EditorJS object `{ time, blocks, version }` (the admin form sends this)
- *  - a JSON string
+ *  - the full EditorJS object `{ time, blocks, version }`
+ *  - a plain blocks array `[{ type, data }, ...]`
+ *  - a JSON string of either of the above
  *  - `undefined`
  *
  * Returns `null` when no usable blocks are found.
@@ -49,6 +50,9 @@ function extractEditorBlocks(content: unknown): EditorBlock[] | null {
   if (typeof content === "string") {
     try {
       const parsed: unknown = JSON.parse(content);
+      if (Array.isArray(parsed)) {
+        return parsed as EditorBlock[];
+      }
       if (parsed && typeof parsed === "object" && Array.isArray((parsed as { blocks?: unknown }).blocks)) {
         return (parsed as { blocks: EditorBlock[] }).blocks;
       }
@@ -56,6 +60,9 @@ function extractEditorBlocks(content: unknown): EditorBlock[] | null {
       return null;
     }
     return null;
+  }
+  if (Array.isArray(content)) {
+    return content as EditorBlock[];
   }
   if (typeof content === "object" && Array.isArray((content as { blocks?: unknown }).blocks)) {
     return (content as { blocks: EditorBlock[] }).blocks;
@@ -153,7 +160,10 @@ export function createPostRepo(db: D1Database): PostRepo {
     if (!blocks || blocks.length === 0) {
       return { success: false, code: "VALIDATION_ERROR", message: "Post content is required" };
     }
-    const contentJson = JSON.stringify(blocks);
+    // Store the canonical EditorJS output object so reads don't need to
+    // distinguish between an array and a `{ time, blocks, version }` wrapper.
+    const editorData = { time: Date.now(), blocks, version: "2.26.5" };
+    const contentJson = JSON.stringify(editorData);
     const contentHtml = renderBlocksToHtml(blocks);
     const tagsJson = JSON.stringify(input.tags ?? []);
     const now = new Date().toISOString();

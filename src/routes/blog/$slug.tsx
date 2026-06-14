@@ -15,17 +15,35 @@ import { ROUTES } from "@/lib/routes";
 import i18n from "@/i18n/config";
 
 /** Render the post body. Use `content_html` when present (new rows), else
- *  fall back to rendering the parsed EditorJS JSON via `renderBlocksToHtml`. */
+ *  fall back to rendering the parsed EditorJS JSON via `renderBlocksToHtml`.
+ *
+ *  Accepts three content shapes (for backward compat with legacy data):
+ *  1. `content` is already a string of HTML → `content_html` is used directly
+ *  2. `content` is the full EditorJS object `{ time, blocks, version }` → use `blocks`
+ *  3. `content` is a plain blocks array `[{ type, data }, ...]` → use as blocks directly
+ */
 function renderPostBody(contentHtml: string | null, contentJson: unknown): string {
   if (contentHtml && contentHtml.length > 0) return contentHtml;
-  // Legacy fallback: parse content and re-render
   try {
-    const parsed = typeof contentJson === "string" ? JSON.parse(contentJson) : contentJson;
-    const blocks =
-      parsed && typeof parsed === "object" && Array.isArray((parsed as { blocks?: unknown }).blocks)
-        ? (parsed as { blocks: Parameters<typeof renderBlocksToHtml>[0] }).blocks
-        : [];
-    return renderBlocksToHtml(blocks);
+    const parsed =
+      typeof contentJson === "string" ? JSON.parse(contentJson) : contentJson;
+
+    let blocks: unknown;
+    if (Array.isArray(parsed)) {
+      // Content is directly a blocks array (legacy / current store format)
+      blocks = parsed;
+    } else if (
+      parsed &&
+      typeof parsed === "object" &&
+      Array.isArray((parsed as { blocks?: unknown }).blocks)
+    ) {
+      // Content is the full EditorJS output object
+      blocks = (parsed as { blocks: unknown[] }).blocks;
+    } else {
+      blocks = [];
+    }
+
+    return renderBlocksToHtml(blocks as Parameters<typeof renderBlocksToHtml>[0]);
   } catch {
     return "";
   }
