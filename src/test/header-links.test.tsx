@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "@/routeTree.gen";
 import { describe, expect, it, vi } from "vitest";
@@ -49,7 +49,9 @@ describe("Header navigation links", () => {
 
   it("renders blog link as a TanStack Router Link (active route)", async () => {
     const router = await createAndRender();
-    await router.navigate({ to: "/blog" });
+    await act(async () => {
+      await router.navigate({ to: "/blog" });
+    });
 
     // Navigate to blog, so the blog link becomes "active"
     const blogLink = await screen.findByRole("link", { name: "Blog" });
@@ -59,7 +61,9 @@ describe("Header navigation links", () => {
 
   it("renders the brand link as a TanStack Router Link (active route)", async () => {
     const router = await createAndRender();
-    await router.navigate({ to: "/" });
+    await act(async () => {
+      await router.navigate({ to: "/" });
+    });
 
     // The brand is a <Link to="/">. At "/" it is active so it gets
     // data-status="active". Query by href to avoid angle brackets in name.
@@ -72,7 +76,9 @@ describe("Header navigation links", () => {
 
   it("renders hash-anchor links as native <a> elements", async () => {
     const router = await createAndRender();
-    await router.navigate({ to: "/" });
+    await act(async () => {
+      await router.navigate({ to: "/" });
+    });
 
     // Collect every link whose href starts with "/#" (section anchors)
     const allLinks = screen.getAllByRole("link");

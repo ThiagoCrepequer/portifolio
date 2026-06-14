@@ -32,11 +32,10 @@ import {
   SiDocker,
   SiGit,
   SiLinux,
-  SiAmazonwebservices,
   SiCloudflare,
-  SiGooglegemini,
   SiOpenai,
 } from "react-icons/si";
+import { FaAws, FaGem } from "react-icons/fa";
 import { TerminalWindow } from "@/components/hermes/TerminalWindow";
 import { SectionHeader } from "@/components/hermes/SectionHeader";
 import { GridCard } from "@/components/hermes/GridCard";
@@ -121,10 +120,10 @@ function App() {
     docker: SiDocker,
     git: SiGit,
     linux: SiLinux,
-    aws: SiAmazonwebservices,
+    aws: FaAws,
     cloudflare: SiCloudflare,
     reactnative: SiReact,
-    gemini: SiGooglegemini,
+    gemini: FaGem,
     openai: SiOpenai,
   };
 

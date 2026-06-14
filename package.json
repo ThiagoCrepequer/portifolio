@@ -65,6 +65,14 @@
     "vite-tsconfig-paths": "^5.1.4",
     "zod": "^4.1.12"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.45.1",
+    "@rollup/rollup-linux-x64-musl": "^4.45.1",
+    "@rollup/rollup-linux-arm64-gnu": "^4.45.1",
+    "@rollup/rollup-darwin-arm64": "^4.45.1",
+    "@rollup/rollup-darwin-x64": "^4.45.1",
+    "@rollup/rollup-win32-x64-msvc": "^4.45.1"
+  },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
     "@eslint/js": "^9.24.0",

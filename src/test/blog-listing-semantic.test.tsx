@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "@/routeTree.gen";
 import { describe, expect, it, vi } from "vitest";
@@ -58,7 +58,9 @@ describe("blog listing – semantic headings", () => {
     render(<RouterProvider router={router} />);
 
     // Navigate to the blog listing and wait for the route to load
-    await router.navigate({ to: "/blog" });
+    await act(async () => {
+      await router.navigate({ to: "/blog" });
+    });
 
     // Assert each known post title is rendered as an <h2>
     const heading1 = await screen.findByRole("heading", {
@@ -78,7 +80,9 @@ describe("blog listing – semantic headings", () => {
     const router = createRouter({ routeTree });
     render(<RouterProvider router={router} />);
 
-    await router.navigate({ to: "/blog" });
+    await act(async () => {
+      await router.navigate({ to: "/blog" });
+    });
 
     // Wait for at least one post to be rendered
     await screen.findByText(/Primeiro Post do Blog/i);
